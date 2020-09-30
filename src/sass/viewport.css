@@ -1,0 +1,17 @@
+div#root {
+  width: 100%;
+}
+div#root div#OuterWrapper div#InnerWrapper {
+  transform: translateY(0);
+  transition: transform 0.5s ease;
+}
+div#root div#OuterWrapper div#InnerWrapper div#ViewsWrapper {
+  width: 100%;
+  height: 100%;
+  padding: 0 50px;
+}
+div#root div#OuterWrapper div#InnerWrapper div#ViewsWrapper div#ViewsContainer {
+  height: 400vh;
+}
+
+/*# sourceMappingURL=viewport.css.map */

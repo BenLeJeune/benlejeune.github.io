@@ -1,0 +1,8 @@
+div#SidebarColumn {
+  position: fixed;
+  width: 50px;
+  height: 100vh;
+  background-color: red;
+}
+
+/*# sourceMappingURL=sidebar.css.map */
