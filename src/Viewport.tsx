@@ -7,6 +7,7 @@ export default function Viewport() {
 
   return <div id="OuterWrapper">
     <div id="InnerWrapper">
+      <div id="ViewportMargins"/>
       <Sidebar/>
       <Views/>
     </div>

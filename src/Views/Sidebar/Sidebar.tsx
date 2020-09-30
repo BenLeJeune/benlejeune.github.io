@@ -1,9 +1,12 @@
 import React from 'react';
 import './sidebar.css';
+import useSidebar from "../../Hooks/useSidebar";
 
 export default function Sidebar() {
 
-    return <div id="SidebarColumn">
+    const { toggleSidebar } = useSidebar()
 
+    return <div id="SidebarColumn">
+        <p id="SidebarToggle" onMouseDown={ () => toggleSidebar() } >Toggle</p>
     </div>
 }
