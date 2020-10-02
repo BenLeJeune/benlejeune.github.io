@@ -16,7 +16,7 @@ div#LandingView
       svg
         overflow: visible
       path
-        animation: letter-reveal 1s ease-out both
+        animation: letter-reveal-up 0.75s ease both
         &:nth-child(1)
           animation-delay: 0s
         &:nth-child(2)
@@ -39,7 +39,7 @@ div#LandingView
       svg
         overflow: visible
       path
-        animation: name-reveal 0.75s ease both
+        animation: letter-reveal-down 0.75s ease both
         &:nth-child(1)
           animation-delay: 1s
         &:nth-child(2)
@@ -61,18 +61,18 @@ div#LandingView
         &:nth-child(10), &:nth-child(11)
           animation-delay: 2.0s
 
-@keyframes letter-reveal
+@keyframes letter-reveal-up
   from
-    transform: translateX(-2em)
-    fill-opacity: 0
+    transform: translateY(100%)
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0)
   to
-    transform: translateX(0)
-    fill-opacity: 1
+    transform: translateY(0)
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%)
 
-@keyframes name-reveal
+@keyframes letter-reveal-down
   from
-    clip-path: polygon(0 0, 0 0, 0 100%, 0 100%)
-    transform: translateX(-1em)
+    transform: translateY(-100%)
+    clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%)
   to
-    clip-path: polygon( 0 0, 100% 0, 100% 100%, 0 100% )
-    transform: translateX(0)
+    transform: translateY(0)
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%)

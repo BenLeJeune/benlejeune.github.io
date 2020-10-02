@@ -16,7 +16,7 @@ div#LandingView div#LandingBoldTitle div#LandingTitleGreeting svg {
   overflow: visible;
 }
 div#LandingView div#LandingBoldTitle div#LandingTitleGreeting path {
-  animation: letter-reveal 1s ease-out both;
+  animation: letter-reveal-up 0.75s ease both;
 }
 div#LandingView div#LandingBoldTitle div#LandingTitleGreeting path:nth-child(1) {
   animation-delay: 0s;
@@ -49,7 +49,7 @@ div#LandingView div#LandingBoldTitle div#LandingTitleName svg {
   overflow: visible;
 }
 div#LandingView div#LandingBoldTitle div#LandingTitleName path {
-  animation: name-reveal 0.75s ease both;
+  animation: letter-reveal-down 0.75s ease both;
 }
 div#LandingView div#LandingBoldTitle div#LandingTitleName path:nth-child(1) {
   animation-delay: 1s;
@@ -82,24 +82,24 @@ div#LandingView div#LandingBoldTitle div#LandingTitleName path:nth-child(10), di
   animation-delay: 2s;
 }
 
-@keyframes letter-reveal {
+@keyframes letter-reveal-up {
   from {
-    transform: translateX(-2em);
-    fill-opacity: 0;
+    transform: translateY(100%);
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
   }
   to {
-    transform: translateX(0);
-    fill-opacity: 1;
+    transform: translateY(0);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
   }
 }
-@keyframes name-reveal {
+@keyframes letter-reveal-down {
   from {
-    clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
-    transform: translateX(-1em);
+    transform: translateY(-100%);
+    clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
   }
   to {
+    transform: translateY(0);
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-    transform: translateX(0);
   }
 }
 
