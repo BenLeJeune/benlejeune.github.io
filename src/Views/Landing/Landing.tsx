@@ -16,7 +16,6 @@ export default function Landing() {
         const redRect = document.getElementById("LandingView");
 
         if ( redRect ) {
-            console.log(scroll);
             if ( scroll > 0 && redRect.className === 'anim-dormant') {
                 redRect.className = 'anim-transition';
                 setTimeout( () => { if ( redRect.className !== 'anim-dormant' ) redRect.className = 'anim-final' }, 500 )
@@ -24,6 +23,11 @@ export default function Landing() {
             if (scroll === 0) {
                 redRect.className = 'anim-dormant';
             }
+        }
+
+        const createTitle = document.getElementById("LandingTransitionTitle")
+        if ( createTitle ) {
+            createTitle.style.transform = `translateY(${ scroll * 0.8 }px)`
         }
     }
 
@@ -34,8 +38,9 @@ export default function Landing() {
                 <TitleName/>
             </div>
         </div>
-        <div id="LandingTransitionRect">
-
+        <div id="LandingTransitionRect"/>
+        <div id="LandingTransitionTitleContainer">
+            <h1 id="LandingTransitionTitle">I like to create stuff.</h1>
         </div>
     </div>
 
