@@ -27,6 +27,7 @@ div#root div#OuterWrapper div#InnerWrapper div#ViewsWrapper {
 }
 div#root div#OuterWrapper div#InnerWrapper div#ViewsWrapper div#ViewsContainer {
   height: 400vh;
+  transition: transform ease-out 0.3s;
 }
 
 /*# sourceMappingURL=viewport.css.map */

@@ -1,5 +1,5 @@
 div#LandingView {
-  height: calc( 100vh + 50px );
+  height: 100vh;
   width: 100%;
   background-color: white;
   display: flex;
@@ -57,6 +57,7 @@ div#LandingView div#LandingTransitionTitleContainer h1#LandingTransitionTitle {
   font-family: "Montserrat", sans-serif;
   color: #141414;
   font-size: 72px;
+  transition: transform ease-out 0.3s;
 }
 div#LandingView div#LandingTitleContainer {
   height: 100vh;
