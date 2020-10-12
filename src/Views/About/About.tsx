@@ -1,9 +1,12 @@
 import React from 'react';
 import './about.css';
+import useInView from "../../Hooks/useInView";
 
 export default function About() {
 
-    return <div>
+    const { visible } = useInView("InViewTest");
+
+    return <div id="InViewTest">
         HELLO. THIS IS THE NEXT SECTION
     </div>
 
