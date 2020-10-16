@@ -1,0 +1,26 @@
+div#PortfolioContainer {
+  width: 100%;
+  min-height: 100vh;
+}
+div#PortfolioContainer div#PortfolioSectionTitle {
+  width: 100%;
+  margin-top: 10em;
+}
+div#PortfolioContainer div#PortfolioSectionTitle p {
+  font-family: "Bitter", serif;
+  font-size: 1.25em;
+  text-align: center;
+  color: #666;
+  transition: opacity 1.5s ease;
+  opacity: 0;
+}
+div#PortfolioContainer div#PortfolioSectionTitle.visible p {
+  opacity: 1;
+}
+div#PortfolioContainer div#PortfolioGridContainer {
+  display: grid;
+  grid-template-columns: 4fr 3fr 4fr;
+  padding: 10%;
+}
+
+/*# sourceMappingURL=PortfolioContainer.css.map */

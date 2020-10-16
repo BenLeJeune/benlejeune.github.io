@@ -5,7 +5,7 @@ export type useInViewProps = {
 }
 
 //Only works for vertical atm
-export default function useInView( id:string ) {
+export default function useInView( id:string, singleAnimation = false ) {
 
     const [ visible, setVisible ] = useState(false);
 
@@ -23,10 +23,10 @@ export default function useInView( id:string ) {
             // console.log(`Bottom: ${ rect.bottom }`);
             // console.log(`Window Height: ${ window.innerHeight }`);
             // console.log("--------------------------");
-            setVisible( ( targetEl.offsetTop + targetEl.clientHeight - window.scrollY ) > ( 0 + padding ) && ( targetEl.offsetTop - window.scrollY ) < ( window.innerHeight - padding ) );
+            setVisible( p => (( targetEl.offsetTop + targetEl.clientHeight - window.scrollY ) > ( 0 + padding )
+                && ( targetEl.offsetTop - window.scrollY ) < ( window.innerHeight - padding ) || (p && singleAnimation) /* Only runs once */) );
             // console.log(`Bottom Check: ${rect.bottom > ( 0 + padding )}`)
             // console.log(`Top Check: ${rect.top < ( window.innerHeight - padding )}`)
-            setTimeout(() => console.log( visible ? "visible" : "not visible" ), 0)
         }
     }
 

@@ -1,0 +1,42 @@
+div.portfolioComponentMainContainer {
+  display: flex;
+  min-height: 400px;
+  position: relative;
+}
+div.portfolioComponentMainContainer div.portfolioComponentBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0.2em solid;
+  transform: translate3d(-1em, 1em, 0);
+}
+div.portfolioComponentMainContainer div.portfolioComponentBackground.black {
+  border-color: #141414;
+}
+div.portfolioComponentMainContainer div.portfolioComponentBackground.purple {
+  border-color: #b506fc;
+}
+div.portfolioComponentMainContainer div.portfolioComponentBackground.red {
+  border-color: #ff0046;
+}
+div.portfolioComponentMainContainer div.portfolioComponentImageContainer {
+  display: flex;
+  width: 100%;
+  background-color: red;
+  position: relative;
+  overflow: hidden;
+}
+div.portfolioComponentMainContainer div.portfolioComponentImageContainer div.portfolioComponentImageInner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 150%;
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+  transition: transform 0.3s ease-out;
+}
+
+/*# sourceMappingURL=PortfolioComponent.css.map */
