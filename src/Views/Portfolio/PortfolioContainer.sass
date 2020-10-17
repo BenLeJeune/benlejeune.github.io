@@ -22,6 +22,11 @@ div#PortfolioContainer
       display: grid
       grid-template-rows: 4fr 1fr 4fr 1fr
       div.columns
+        transition: opacity 0.5s ease
+        &.notVisible
+          opacity: 0
+        &.visible
+          opacity: 1
         display: grid
         grid-template-columns: 4fr 3fr 4fr
         width: 100%

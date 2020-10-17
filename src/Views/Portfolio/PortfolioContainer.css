@@ -25,9 +25,16 @@ div#PortfolioContainer div#PortfolioGridContainer div.portfolioGridRows {
   grid-template-rows: 4fr 1fr 4fr 1fr;
 }
 div#PortfolioContainer div#PortfolioGridContainer div.portfolioGridRows div.columns {
+  transition: opacity 0.5s ease;
   display: grid;
   grid-template-columns: 4fr 3fr 4fr;
   width: 100%;
+}
+div#PortfolioContainer div#PortfolioGridContainer div.portfolioGridRows div.columns.notVisible {
+  opacity: 0;
+}
+div#PortfolioContainer div#PortfolioGridContainer div.portfolioGridRows div.columns.visible {
+  opacity: 1;
 }
 div#PortfolioContainer div#PortfolioGridContainer div.portfolioGridRows div.columns.leftProjContainer {
   grid-row: 1/2;

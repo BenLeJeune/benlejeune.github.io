@@ -23,8 +23,9 @@ export default function useInView( id:string, singleAnimation = false ) {
             // console.log(`Bottom: ${ rect.bottom }`);
             // console.log(`Window Height: ${ window.innerHeight }`);
             // console.log("--------------------------");
-            setVisible( p => (( targetEl.offsetTop + targetEl.clientHeight - window.scrollY ) > ( 0 + padding )
-                && ( targetEl.offsetTop - window.scrollY ) < ( window.innerHeight - padding ) || (p && singleAnimation) /* Only runs once */) );
+            const { top, bottom } = targetEl.getBoundingClientRect();
+            setVisible( p => (bottom >  0 + padding
+                && top <  window.innerHeight - padding )|| (p && singleAnimation) /* Only runs once */ );
             // console.log(`Bottom Check: ${rect.bottom > ( 0 + padding )}`)
             // console.log(`Top Check: ${rect.top < ( window.innerHeight - padding )}`)
         }

@@ -27,13 +27,18 @@ export type PortfolioRowProps = {
 }
 
 export function PortfolioRow({ leftproj, rightproj }:PortfolioRowProps) {
+
+    const { visibleClass:leftVisibleClass } = useInView( `Left-Proj-${ leftproj.title }` );
+
+    const { visibleClass:rightVisibleClass } = useInView(`Right-Proj-${ rightproj.title }`);
+
     return <div className="portfolioGridRows">
-        <div className="leftProjContainer columns">
+        <div id={`Left-Proj-${ leftproj.title }`} className={`leftProjContainer columns ${leftVisibleClass}`}>
             <div className="leftProj">
                 <PortfolioComponent proj={ leftproj }/>
             </div>
         </div>
-        <div className="rightProjContainer columns">
+        <div id={`Right-Proj-${ rightproj.title }`} className={`rightProjContainer columns ${rightVisibleClass}`}>
             <div className="rightProj">
                 <PortfolioComponent proj={ rightproj }/>
             </div>
