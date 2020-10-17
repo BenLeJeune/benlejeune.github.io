@@ -17,6 +17,19 @@ div#PortfolioContainer
       opacity: 1
 
   div#PortfolioGridContainer
-    display: grid
-    grid-template-columns: 4fr 3fr 4fr
     padding: 10%
+    div.portfolioGridRows
+      display: grid
+      grid-template-rows: 4fr 1fr 4fr 1fr
+      div.columns
+        display: grid
+        grid-template-columns: 4fr 3fr 4fr
+        width: 100%
+        &.leftProjContainer
+          grid-row: 1/2
+        &.rightProjContainer
+          grid-row: 3/4
+        div.leftProj
+          grid-column: 1/2
+        div.rightProj
+          grid-column: 3/4

@@ -1,9 +1,59 @@
 @use '../../sass/module'
 
+div.columns:hover
+  div.portfolioComponentMainContainer
+    div.portfolioComponentBackground
+      &.black
+        background-color: module.$black
+      &.red
+        background-color: module.$red
+      &.purple
+        background-color: module.$purple
+    div.portfolioComponentTextContainer
+      div.portfolioComponentTextRow
+        div.portfolioComponentText
+          &.left
+            transform: translateX(25%)
+          &.right
+            transform: translateX(-25%)
+          opacity: 1
+
 div.portfolioComponentMainContainer
   display: flex
   min-height: 400px
   position: relative
+  div.portfolioComponentTextContainer
+    font-family: module.$sans-font
+    font-size: 2em
+    position: absolute
+    padding: 5% 0
+    top: 0
+    left: 0
+    height: 100%
+    width: 100%
+    display: grid
+    grid-template-rows: repeat(3, 1fr)
+    &.black
+      color: module.$black
+    &.purple
+      color: module.$purple
+    &.red
+      color: module.$red
+    div.portfolioComponentTextRow
+      width: 100%
+      display: flex
+      &.left
+        justify-content: flex-end
+      &.right
+        justify-content: flex-start
+      div.portfolioComponentText
+        height: 100%
+        width: 50%
+        display: flex
+        opacity: 0
+        transition: opacity 0.5s ease, transform 0.5s ease
+        transform: translateX(0)
+
   div.portfolioComponentBackground
     position: absolute
     top: 0
@@ -12,6 +62,8 @@ div.portfolioComponentMainContainer
     height: 100%
     border: 0.2em solid
     transform: translate3d(-1em, 1em, 0)
+    background-color: transparent
+    transition: background-color 0.5s ease
     &.black
       border-color: module.$black
     &.purple
@@ -21,14 +73,13 @@ div.portfolioComponentMainContainer
   div.portfolioComponentImageContainer
     display: flex
     width: 100%
-    background-color: red
     position: relative
     overflow: hidden
     div.portfolioComponentImageInner
       position: absolute
-      top: 0
+      top: -25%
       left: 0
-      height: 150%
+      height: 200%
       width: 100%
       background-position: center
       background-size: cover

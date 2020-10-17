@@ -7,6 +7,7 @@ export type Project = {
     color: "red" | "purple" | "black",
     facing: "left" | "right",
     height: 1 | 2 | 3,
+    multiplier:number,
     items: {
         [id:string]: {
             imageURL:string
@@ -16,18 +17,35 @@ export type Project = {
 }
 
 export const MyPortfolio:{[id:string]:Project} = {
-    "fivePines": {
+    "fivepines": {
         title: "Five Pines",
         subtitle: "Logo and Website Design",
         coverURL: "/assets/fivepines/fivepinescover.png",
         color: "black",
         facing: "left",
         height: 3,
+        multiplier: 0.8,
         items: {
             "0": {
-                imageURL: "./assets/fivepines/fivepines-cover.png",
+                imageURL: "/assets/fivepines/fivepines-cover.png",
                 caption: "I worked with Five Pines LTD to create a website and logo."
             }
         }
+    },
+    "personal": {
+        title: "Personal Brand",
+        subtitle: "Logo and Website Design",
+        coverURL: "/assets/personal-logo/personal-logo-cover.png",
+        color: "red",
+        facing: "right",
+        height: 1,
+        multiplier: 0.6,
+        items: {
+            "0": {
+                imageURL: "/assets/personal-logo/personal-logo-cover,png",
+                caption: "I wanted a way to make myself stand out."
+            }
+        }
     }
+
 }

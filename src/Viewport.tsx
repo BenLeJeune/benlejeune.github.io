@@ -1,12 +1,14 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useRef} from 'react';
 import './sass/viewport.css';
 import Sidebar from "./Views/Sidebar/Sidebar";
 import Views from "./Views/Views";
 import useWindowSize from "./Hooks/useWindowSize";
+import useScroll from "./Hooks/useScroll";
 
 export default function Viewport() {
 
-  const { height, width } = useWindowSize()
+  const { height, width } = useWindowSize();
+  const ViewportMarginsRef = useRef<HTMLDivElement>(null);
 
   //This sets the height of the body whenever the window is resized
   useEffect(() => {
@@ -17,9 +19,15 @@ export default function Viewport() {
     }
   }, [ height, width ])
 
+  useScroll( scrollY => {
+    if ( ViewportMarginsRef.current ) {
+      ViewportMarginsRef.current.style.border = `${scrollY > 50 ? "0" : "50"}px solid white`
+    }
+  } )
+
   return <div id="OuterWrapper">
     <div id="InnerWrapper">
-      <div id="ViewportMargins"/>
+      <div ref={ ViewportMarginsRef } id="ViewportMargins"/>
       <Sidebar/>
       <Views/>
     </div>

@@ -1,7 +1,65 @@
+div.columns:hover div.portfolioComponentMainContainer div.portfolioComponentBackground.black {
+  background-color: #141414;
+}
+div.columns:hover div.portfolioComponentMainContainer div.portfolioComponentBackground.red {
+  background-color: #ff0046;
+}
+div.columns:hover div.portfolioComponentMainContainer div.portfolioComponentBackground.purple {
+  background-color: #b506fc;
+}
+div.columns:hover div.portfolioComponentMainContainer div.portfolioComponentTextContainer div.portfolioComponentTextRow div.portfolioComponentText {
+  opacity: 1;
+}
+div.columns:hover div.portfolioComponentMainContainer div.portfolioComponentTextContainer div.portfolioComponentTextRow div.portfolioComponentText.left {
+  transform: translateX(25%);
+}
+div.columns:hover div.portfolioComponentMainContainer div.portfolioComponentTextContainer div.portfolioComponentTextRow div.portfolioComponentText.right {
+  transform: translateX(-25%);
+}
+
 div.portfolioComponentMainContainer {
   display: flex;
   min-height: 400px;
   position: relative;
+}
+div.portfolioComponentMainContainer div.portfolioComponentTextContainer {
+  font-family: "Montserrat", sans-serif;
+  font-size: 2em;
+  position: absolute;
+  padding: 5% 0;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+}
+div.portfolioComponentMainContainer div.portfolioComponentTextContainer.black {
+  color: #141414;
+}
+div.portfolioComponentMainContainer div.portfolioComponentTextContainer.purple {
+  color: #b506fc;
+}
+div.portfolioComponentMainContainer div.portfolioComponentTextContainer.red {
+  color: #ff0046;
+}
+div.portfolioComponentMainContainer div.portfolioComponentTextContainer div.portfolioComponentTextRow {
+  width: 100%;
+  display: flex;
+}
+div.portfolioComponentMainContainer div.portfolioComponentTextContainer div.portfolioComponentTextRow.left {
+  justify-content: flex-end;
+}
+div.portfolioComponentMainContainer div.portfolioComponentTextContainer div.portfolioComponentTextRow.right {
+  justify-content: flex-start;
+}
+div.portfolioComponentMainContainer div.portfolioComponentTextContainer div.portfolioComponentTextRow div.portfolioComponentText {
+  height: 100%;
+  width: 50%;
+  display: flex;
+  opacity: 0;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  transform: translateX(0);
 }
 div.portfolioComponentMainContainer div.portfolioComponentBackground {
   position: absolute;
@@ -11,6 +69,8 @@ div.portfolioComponentMainContainer div.portfolioComponentBackground {
   height: 100%;
   border: 0.2em solid;
   transform: translate3d(-1em, 1em, 0);
+  background-color: transparent;
+  transition: background-color 0.5s ease;
 }
 div.portfolioComponentMainContainer div.portfolioComponentBackground.black {
   border-color: #141414;
@@ -24,15 +84,14 @@ div.portfolioComponentMainContainer div.portfolioComponentBackground.red {
 div.portfolioComponentMainContainer div.portfolioComponentImageContainer {
   display: flex;
   width: 100%;
-  background-color: red;
   position: relative;
   overflow: hidden;
 }
 div.portfolioComponentMainContainer div.portfolioComponentImageContainer div.portfolioComponentImageInner {
   position: absolute;
-  top: 0;
+  top: -25%;
   left: 0;
-  height: 150%;
+  height: 200%;
   width: 100%;
   background-position: center;
   background-size: cover;

@@ -18,9 +18,28 @@ div#PortfolioContainer div#PortfolioSectionTitle.visible p {
   opacity: 1;
 }
 div#PortfolioContainer div#PortfolioGridContainer {
+  padding: 10%;
+}
+div#PortfolioContainer div#PortfolioGridContainer div.portfolioGridRows {
+  display: grid;
+  grid-template-rows: 4fr 1fr 4fr 1fr;
+}
+div#PortfolioContainer div#PortfolioGridContainer div.portfolioGridRows div.columns {
   display: grid;
   grid-template-columns: 4fr 3fr 4fr;
-  padding: 10%;
+  width: 100%;
+}
+div#PortfolioContainer div#PortfolioGridContainer div.portfolioGridRows div.columns.leftProjContainer {
+  grid-row: 1/2;
+}
+div#PortfolioContainer div#PortfolioGridContainer div.portfolioGridRows div.columns.rightProjContainer {
+  grid-row: 3/4;
+}
+div#PortfolioContainer div#PortfolioGridContainer div.portfolioGridRows div.columns div.leftProj {
+  grid-column: 1/2;
+}
+div#PortfolioContainer div#PortfolioGridContainer div.portfolioGridRows div.columns div.rightProj {
+  grid-column: 3/4;
 }
 
 /*# sourceMappingURL=PortfolioContainer.css.map */
