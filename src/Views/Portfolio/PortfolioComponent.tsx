@@ -31,7 +31,9 @@ export default function PortfolioComponent({ proj }:PortfolioContainerProps) {
             }} />
         </div>
         <div className={`portfolioComponentTextContainer ${ proj.color }`}>
-            <div className={`portfolioComponentTextRow ${ proj.facing }`}>
+            <div className={`portfolioComponentTextRow ${ proj.facing }`} style={{
+                gridRow: `${proj.height}/${proj.height+1}`
+            }}>
                 <div className={`portfolioComponentText ${ proj.facing }`}>
                     <h2>{ proj.title }</h2>
                 </div>
