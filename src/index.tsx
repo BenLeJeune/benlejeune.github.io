@@ -3,10 +3,13 @@ import ReactDOM from 'react-dom';
 import Viewport from './Viewport';
 import * as serviceWorker from './serviceWorker';
 import './sass/index.css'
+import ViewProjectContextWrapper from "./Context/ViewProjectContextWrapper";
 
 ReactDOM.render(
   <React.StrictMode>
-    <Viewport />
+      <ViewProjectContextWrapper>
+          <Viewport />
+      </ViewProjectContextWrapper>
   </React.StrictMode>,
   document.getElementById('root')
 );

@@ -25,6 +25,7 @@ div#PortfolioContainer div#PortfolioGridContainer div.portfolioGridRows {
   grid-template-rows: 4fr 1fr 4fr 1fr;
 }
 div#PortfolioContainer div#PortfolioGridContainer div.portfolioGridRows div.columns {
+  cursor: pointer;
   transition: opacity 0.5s ease;
   display: grid;
   grid-template-columns: 4fr 3fr 4fr;
