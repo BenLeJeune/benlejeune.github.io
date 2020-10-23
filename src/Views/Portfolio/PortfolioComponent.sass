@@ -12,15 +12,20 @@ div.columns:hover
     div.portfolioComponentTextContainer
       div.portfolioComponentTextRow
         div.portfolioComponentText
-          &.left
-            transform: translateX(25%)
-          &.right
-            transform: translateX(-25%)
           opacity: 1
+          &.left
+            h2, p
+              transform: translateX(50%)
+          &.right
+            h2, p
+              transform: translateX(-50%)
 
 div.portfolioComponentMainContainer
   display: flex
   min-height: 400px
+  @media ( min-width: 1500px )
+    min-height: 30vw
+
   position: relative
   div.portfolioComponentTextContainer
     font-family: module.$sans-font
@@ -43,16 +48,26 @@ div.portfolioComponentMainContainer
       width: 100%
       display: flex
       &.left
-        justify-content: flex-end
+        div.portfolioComponentText h2, p
+          transform: translateX(25%)
+          text-align: left
       &.right
-        justify-content: flex-start
+        div.portfolioComponentText h2, p
+          transform: translateX(-25%)
+          text-align: left
       div.portfolioComponentText
+        justify-content: flex-start
         height: 100%
-        width: 50%
+        width: 100%
         display: flex
+        flex-direction: column
         opacity: 0
-        transition: opacity 0.5s ease, transform 0.5s ease
-        transform: translateX(0)
+        transition: opacity 0.5s ease
+        white-space: nowrap
+        h2, p
+          transition: transform 0.5s ease-in-out
+        p
+          transition-delay: 0.05s
 
   div.portfolioComponentBackground
     position: absolute

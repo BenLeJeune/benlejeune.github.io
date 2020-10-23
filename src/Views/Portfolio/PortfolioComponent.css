@@ -10,17 +10,22 @@ div.columns:hover div.portfolioComponentMainContainer div.portfolioComponentBack
 div.columns:hover div.portfolioComponentMainContainer div.portfolioComponentTextContainer div.portfolioComponentTextRow div.portfolioComponentText {
   opacity: 1;
 }
-div.columns:hover div.portfolioComponentMainContainer div.portfolioComponentTextContainer div.portfolioComponentTextRow div.portfolioComponentText.left {
-  transform: translateX(25%);
+div.columns:hover div.portfolioComponentMainContainer div.portfolioComponentTextContainer div.portfolioComponentTextRow div.portfolioComponentText.left h2, div.columns:hover div.portfolioComponentMainContainer div.portfolioComponentTextContainer div.portfolioComponentTextRow div.portfolioComponentText.left p {
+  transform: translateX(50%);
 }
-div.columns:hover div.portfolioComponentMainContainer div.portfolioComponentTextContainer div.portfolioComponentTextRow div.portfolioComponentText.right {
-  transform: translateX(-25%);
+div.columns:hover div.portfolioComponentMainContainer div.portfolioComponentTextContainer div.portfolioComponentTextRow div.portfolioComponentText.right h2, div.columns:hover div.portfolioComponentMainContainer div.portfolioComponentTextContainer div.portfolioComponentTextRow div.portfolioComponentText.right p {
+  transform: translateX(-50%);
 }
 
 div.portfolioComponentMainContainer {
   display: flex;
   min-height: 400px;
   position: relative;
+}
+@media (min-width: 1500px) {
+  div.portfolioComponentMainContainer {
+    min-height: 30vw;
+  }
 }
 div.portfolioComponentMainContainer div.portfolioComponentTextContainer {
   font-family: "Montserrat", sans-serif;
@@ -47,19 +52,29 @@ div.portfolioComponentMainContainer div.portfolioComponentTextContainer div.port
   width: 100%;
   display: flex;
 }
-div.portfolioComponentMainContainer div.portfolioComponentTextContainer div.portfolioComponentTextRow.left {
-  justify-content: flex-end;
+div.portfolioComponentMainContainer div.portfolioComponentTextContainer div.portfolioComponentTextRow.left div.portfolioComponentText h2, div.portfolioComponentMainContainer div.portfolioComponentTextContainer div.portfolioComponentTextRow.left p {
+  transform: translateX(25%);
+  text-align: left;
 }
-div.portfolioComponentMainContainer div.portfolioComponentTextContainer div.portfolioComponentTextRow.right {
-  justify-content: flex-start;
+div.portfolioComponentMainContainer div.portfolioComponentTextContainer div.portfolioComponentTextRow.right div.portfolioComponentText h2, div.portfolioComponentMainContainer div.portfolioComponentTextContainer div.portfolioComponentTextRow.right p {
+  transform: translateX(-25%);
+  text-align: left;
 }
 div.portfolioComponentMainContainer div.portfolioComponentTextContainer div.portfolioComponentTextRow div.portfolioComponentText {
+  justify-content: flex-start;
   height: 100%;
-  width: 50%;
+  width: 100%;
   display: flex;
+  flex-direction: column;
   opacity: 0;
-  transition: opacity 0.5s ease, transform 0.5s ease;
-  transform: translateX(0);
+  transition: opacity 0.5s ease;
+  white-space: nowrap;
+}
+div.portfolioComponentMainContainer div.portfolioComponentTextContainer div.portfolioComponentTextRow div.portfolioComponentText h2, div.portfolioComponentMainContainer div.portfolioComponentTextContainer div.portfolioComponentTextRow div.portfolioComponentText p {
+  transition: transform 0.5s ease-in-out;
+}
+div.portfolioComponentMainContainer div.portfolioComponentTextContainer div.portfolioComponentTextRow div.portfolioComponentText p {
+  transition-delay: 0.05s;
 }
 div.portfolioComponentMainContainer div.portfolioComponentBackground {
   position: absolute;

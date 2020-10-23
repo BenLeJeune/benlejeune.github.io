@@ -36,6 +36,7 @@ export default function PortfolioComponent({ proj }:PortfolioContainerProps) {
             }}>
                 <div className={`portfolioComponentText ${ proj.facing }`}>
                     <h2>{ proj.title }</h2>
+                    <p>{ proj.subtitle }</p>
                 </div>
             </div>
         </div>
