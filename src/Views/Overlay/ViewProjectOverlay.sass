@@ -1,0 +1,92 @@
+@use '../../sass/module'
+
+div#ViewProjectOverlayContainer
+  position: fixed
+  height: 100vh
+  width: 100%
+  background-color: white
+  top: 0
+  left: 0
+  z-index: 50
+  padding: 50px
+  transition: clip-path 0.5s ease
+  display: flex
+  align-items: center
+  justify-content: start
+  flex-flow: column nowrap
+  div#ViewProjectOverlayTopBar
+    width: 100%
+    display: grid
+    grid-template-columns: 1fr 2fr 1fr
+    div#TopBarProjectTitle
+      grid-column: 2/3
+      h2
+        font-family: module.$sans-font
+        font-size: 64px
+        font-weight: 600
+        text-align: center
+    div#TopBarHideButtonOuter
+      height: 100%
+      position: relative
+      display: flex
+      justify-content: flex-end
+      align-items: center
+      padding: 10px
+      div#HideButtonInnerContainer
+        position: absolute
+        height: 3em
+        cursor: pointer
+        width: 3em
+        right: 0
+        div#HideButtonMain
+          position: absolute
+          pointer-events: none
+          width: 100%
+          height: 100%
+          border: 1px solid module.$black
+          border-radius: 100vw
+          cursor: pointer
+          &.purple
+            border-color: module.$purple
+          &.red
+            border-color: module.$red
+          &.black
+            border-color: module.$black
+          img#HideButtonMainImage
+            padding: 10px
+            height: 100%
+        div#HideButtonHover
+          position: absolute
+          pointer-events: none
+          width: 100%
+          height: 100%
+          border-radius: 100vw
+          border: 1px solid
+          &.purple
+            background-color: module.$purple
+            border-color: module.$purple
+          &.red
+            background-color: module.$red
+            border-color: module.$red
+          &.black
+            background-color: module.$black
+            border-color: module.$black
+          transition: clip-path 0.5s ease
+          clip-path: polygon(0 100%, 0 100%, 100% 100%, 100% 100% )
+          img#HideButtonHoverImage
+            padding: 10px
+            height: 100%
+        &:hover div#HideButtonHover
+          clip-path: polygon( 0 100%, 0 0%, 100% -10%, 100% 100% )
+
+.viewProjectOverlay-enter
+  clip-path: polygon( 0 0, 0 0, 50% 0, 100% 0, 100% 0 )
+
+.viewProjectOverlay-enter-active
+  clip-path: polygon( 0 0, 0 100%, 50% 120%, 100% 100%, 100% 0 )
+
+.viewProjectOverlay-exit
+  clip-path: polygon( 0 0, 0 100%, 50% 120%, 100% 100%, 100% 0 )
+
+.viewProjectOverlay-exit-active
+  clip-path: polygon( 0 100%, 0 100%, 50% 100%, 100% 100%, 100% 100% )

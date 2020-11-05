@@ -27,8 +27,12 @@ export const MyPortfolio:{[id:string]:Project} = {
         multiplier: 0.8,
         items: {
             "0": {
-                imageURL: "/assets/fivepines/fivepines-cover.png",
+                imageURL: "/assets/fivepines/fivepinescover.png",
                 caption: "I worked with Five Pines LTD to create a website and logo."
+            },
+            "1": {
+                imageURL: "/assets/personal-logo/personal-logo-cover.png",
+                caption: "I wanted a way to make myself stand out."
             }
         }
     },
@@ -42,7 +46,11 @@ export const MyPortfolio:{[id:string]:Project} = {
         multiplier: 0.6,
         items: {
             "0": {
-                imageURL: "/assets/personal-logo/personal-logo-cover,png",
+                imageURL: "/assets/personal-logo/personal-logo-cover.png",
+                caption: "I wanted a way to make myself stand out."
+            },
+            "1": {
+                imageURL: "/assets/personal-logo/personal-logo-cover.png",
                 caption: "I wanted a way to make myself stand out."
             }
         }

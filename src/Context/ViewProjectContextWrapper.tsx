@@ -8,7 +8,7 @@ type Props = {
 
 export default function ViewProjectContextWrapper({ children }:Props) {
 
-    const [ shown, setShown ] = useState<boolean>(false);
+    const [ shown, setShown ] = useState<boolean>(true);
 
     const [ project, setProject ] = useState<Project>( MyPortfolio[ Object.keys(MyPortfolio)[0] ] )
 

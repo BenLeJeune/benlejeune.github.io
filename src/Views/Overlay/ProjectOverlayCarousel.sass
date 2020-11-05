@@ -1,0 +1,28 @@
+@use '../../sass/module'
+
+div#ViewProjectOverlayContainer
+  div.carousel-root
+    overflow: hidden
+    div.carousel-slider
+      width: 100%
+      height: 100%
+      div.slider-wrapper
+        height: 100%
+        ul.slider.animated
+          height: 100%
+          li.slide
+            height: 100%
+            background-color: transparent
+            div.slideContainer
+              height: 100%
+              img.slideImage
+                max-height: 100%
+                max-width: 100%
+                object-fit: cover
+                width: auto
+  button.control-arrow
+    opacity: 1
+    background-color: transparent
+    &:before
+      border-color: module.$black
+      opacity: 1
