@@ -1,0 +1,83 @@
+div#ViewProjectOverlayContainer div.carousel-root {
+  overflow: hidden;
+}
+div#ViewProjectOverlayContainer div.carousel-root div.carousel-slider {
+  width: 100%;
+  height: 100%;
+}
+div#ViewProjectOverlayContainer div.carousel-root div.carousel-slider div.slider-wrapper {
+  height: 100%;
+  padding: 2em;
+}
+div#ViewProjectOverlayContainer div.carousel-root div.carousel-slider div.slider-wrapper ul.slider.animated {
+  height: 100%;
+  position: relative;
+}
+div#ViewProjectOverlayContainer div.carousel-root div.carousel-slider div.slider-wrapper ul.slider.animated li.slide {
+  transition: opacity 0.5s ease;
+  opacity: 0;
+  height: 100%;
+  background-color: transparent !important;
+}
+div#ViewProjectOverlayContainer div.carousel-root div.carousel-slider div.slider-wrapper ul.slider.animated li.slide.selected {
+  opacity: 1;
+}
+div#ViewProjectOverlayContainer div.carousel-root div.carousel-slider div.slider-wrapper ul.slider.animated li.slide.selected ~ .slide {
+  background-color: red;
+}
+div#ViewProjectOverlayContainer div.carousel-root div.carousel-slider div.slider-wrapper ul.slider.animated li.slide div.slideContainer {
+  height: 100%;
+}
+div#ViewProjectOverlayContainer div.carousel-root div.carousel-slider div.slider-wrapper ul.slider.animated li.slide div.slideContainer img.slideImage {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: cover;
+  width: auto;
+}
+div#ViewProjectOverlayContainer div.buttonColumn {
+  position: absolute;
+  width: 5em;
+  height: 100%;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+div#ViewProjectOverlayContainer div.buttonColumn.right {
+  right: 0;
+}
+div#ViewProjectOverlayContainer div.buttonColumn.right img.arrow.absolute {
+  left: 100%;
+}
+div#ViewProjectOverlayContainer div.buttonColumn.left {
+  left: 0;
+}
+div#ViewProjectOverlayContainer div.buttonColumn.left div.arrowContainer {
+  transform: rotate(180deg);
+}
+div#ViewProjectOverlayContainer div.buttonColumn div.arrowContainer {
+  position: relative;
+  overflow: hidden;
+  z-index: 10;
+}
+div#ViewProjectOverlayContainer div.buttonColumn div.arrowContainer img.arrow {
+  pointer-events: all;
+  padding: 1em;
+  transform: translateX(0);
+  transition: transform 0.5s cubic-bezier(0.85, 0, 0.15, 1), opacity 0.3s ease;
+  opacity: 0.5;
+}
+div#ViewProjectOverlayContainer div.buttonColumn div.arrowContainer img.arrow.hasNext, div#ViewProjectOverlayContainer div.buttonColumn div.arrowContainer img.arrow.hasPrev {
+  cursor: pointer;
+  opacity: 1;
+}
+div#ViewProjectOverlayContainer div.buttonColumn div.arrowContainer img.arrow.absolute {
+  position: absolute;
+  top: 0;
+  left: 100%;
+}
+div#ViewProjectOverlayContainer div.buttonColumn div.arrowContainer:hover img.arrow.hasNext, div#ViewProjectOverlayContainer div.buttonColumn div.arrowContainer:hover img.arrow.hasPrev {
+  transform: translateX(-100%);
+}
+
+/*# sourceMappingURL=ProjectOverlayCarousel.css.map */

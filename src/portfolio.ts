@@ -33,6 +33,10 @@ export const MyPortfolio:{[id:string]:Project} = {
             "1": {
                 imageURL: "/assets/personal-logo/personal-logo-cover.png",
                 caption: "I wanted a way to make myself stand out."
+            },
+            "2": {
+                imageURL: "/assets/personal-logo/personal-logo-cover.png",
+                caption: "I wanted a way to make myself stand out."
             }
         }
     },

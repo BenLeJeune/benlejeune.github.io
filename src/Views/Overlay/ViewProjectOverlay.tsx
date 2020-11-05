@@ -26,7 +26,27 @@ export default function ViewProjectOverlay() {
                 </div>
                 <HideProjectButton/>
             </div>
-            <Carousel>
+            <Carousel
+                showThumbs={ false }
+                showStatus={ false }
+                showIndicators={ false }
+                renderArrowNext={
+                    ( clickHandler, hasNext) => <div className="buttonColumn right">
+                        <div className="arrowContainer" onMouseDown={ clickHandler }>
+                            <img src={`/assets/carousel-arrow-${ project.color }.svg`} alt="" className={`${hasNext?'hasNext':''} arrow`}/>
+                            <img src={`/assets/carousel-arrow-${ project.color }.svg`} alt="" className={`${hasNext?'hasNext':''} arrow absolute`}/>
+                        </div>
+                    </div>
+                }
+                renderArrowPrev={
+                    ( clickHandler, hasPrev) => <div className="buttonColumn left">
+                        <div className="arrowContainer" onMouseDown={ clickHandler }>
+                            <img src={`/assets/carousel-arrow-${ project.color }.svg`} alt="" className={`${hasPrev?'hasPrev':''} arrow`}/>
+                            <img src={`/assets/carousel-arrow-${ project.color }.svg`} alt="" className={`${hasPrev?'hasPrev':''} arrow absolute`}/>
+                        </div>
+                    </div>
+                }
+            >
                 {
                     Object.keys( project.items ).map(
                         itemKey => <div className="slideContainer">
