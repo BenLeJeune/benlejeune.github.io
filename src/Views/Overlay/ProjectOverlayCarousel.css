@@ -1,5 +1,7 @@
 div#ViewProjectOverlayContainer div.carousel-root {
   overflow: hidden;
+  width: 100%;
+  height: 100%;
 }
 div#ViewProjectOverlayContainer div.carousel-root div.carousel-slider {
   width: 100%;
@@ -7,28 +9,32 @@ div#ViewProjectOverlayContainer div.carousel-root div.carousel-slider {
 }
 div#ViewProjectOverlayContainer div.carousel-root div.carousel-slider div.slider-wrapper {
   height: 100%;
+  width: 100%;
   padding: 2em;
 }
-div#ViewProjectOverlayContainer div.carousel-root div.carousel-slider div.slider-wrapper ul.slider.animated {
+div#ViewProjectOverlayContainer div.carousel-root div.carousel-slider div.slider-wrapper ul.slider {
   height: 100%;
-  position: relative;
+  position: absolute;
+  width: 100%;
+  transition: transform 0.5s cubic-bezier(0.75, 0, 0.25, 1);
 }
-div#ViewProjectOverlayContainer div.carousel-root div.carousel-slider div.slider-wrapper ul.slider.animated li.slide {
-  transition: opacity 0.5s ease;
-  opacity: 0;
+div#ViewProjectOverlayContainer div.carousel-root div.carousel-slider div.slider-wrapper ul.slider li.slide {
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  transform: matrix(1, 0, 0.2, 0.8, 0, 0);
   height: 100%;
   background-color: transparent !important;
 }
-div#ViewProjectOverlayContainer div.carousel-root div.carousel-slider div.slider-wrapper ul.slider.animated li.slide.selected {
+div#ViewProjectOverlayContainer div.carousel-root div.carousel-slider div.slider-wrapper ul.slider li.slide.selected {
   opacity: 1;
+  transform: matrix(1, 0, 0, 1, 0, 0);
 }
-div#ViewProjectOverlayContainer div.carousel-root div.carousel-slider div.slider-wrapper ul.slider.animated li.slide.selected ~ .slide {
-  background-color: red;
+div#ViewProjectOverlayContainer div.carousel-root div.carousel-slider div.slider-wrapper ul.slider li.slide.selected ~ .slide {
+  transform: matrix(1, 0, -0.2, 1.2, 0, 0);
 }
-div#ViewProjectOverlayContainer div.carousel-root div.carousel-slider div.slider-wrapper ul.slider.animated li.slide div.slideContainer {
+div#ViewProjectOverlayContainer div.carousel-root div.carousel-slider div.slider-wrapper ul.slider li.slide div.slideContainer {
   height: 100%;
 }
-div#ViewProjectOverlayContainer div.carousel-root div.carousel-slider div.slider-wrapper ul.slider.animated li.slide div.slideContainer img.slideImage {
+div#ViewProjectOverlayContainer div.carousel-root div.carousel-slider div.slider-wrapper ul.slider li.slide div.slideContainer img.slideImage {
   max-height: 100%;
   max-width: 100%;
   object-fit: cover;

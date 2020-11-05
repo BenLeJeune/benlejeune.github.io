@@ -27,6 +27,7 @@ export default function ViewProjectOverlay() {
                 <HideProjectButton/>
             </div>
             <Carousel
+                transitionTime={ 500 }
                 showThumbs={ false }
                 showStatus={ false }
                 showIndicators={ false }

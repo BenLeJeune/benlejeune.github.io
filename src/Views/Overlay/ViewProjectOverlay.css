@@ -26,6 +26,7 @@ div#ViewProjectOverlayContainer div#ViewProjectOverlayTopBar div#TopBarProjectTi
   font-size: 64px;
   font-weight: 600;
   text-align: center;
+  color: #141414;
 }
 div#ViewProjectOverlayContainer div#ViewProjectOverlayTopBar div#TopBarHideButtonOuter {
   height: 100%;
@@ -103,11 +104,11 @@ div#ViewProjectOverlayContainer div#ViewProjectOverlayTopBar div#TopBarHideButto
 }
 
 .viewProjectOverlay-exit {
-  clip-path: polygon(0 0, 0 100%, 50% 120%, 100% 100%, 100% 0);
+  clip-path: polygon(0 -20%, 0 100%, 100% 100%, 100% -20%, 50% 0);
 }
 
 .viewProjectOverlay-exit-active {
-  clip-path: polygon(0 100%, 0 100%, 50% 100%, 100% 100%, 100% 100%);
+  clip-path: polygon(0 100%, 0 100%, 100% 100%, 100% 100%, 50% 100%);
 }
 
 /*# sourceMappingURL=ViewProjectOverlay.css.map */
