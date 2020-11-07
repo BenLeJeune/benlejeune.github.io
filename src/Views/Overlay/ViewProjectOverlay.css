@@ -6,7 +6,7 @@ div#ViewProjectOverlayContainer {
   top: 0;
   left: 0;
   z-index: 50;
-  padding: 50px;
+  padding: 50px 50px 25px;
   transition: clip-path 0.5s ease;
   display: flex;
   align-items: center;
@@ -94,6 +94,15 @@ div#ViewProjectOverlayContainer div#ViewProjectOverlayTopBar div#TopBarHideButto
 div#ViewProjectOverlayContainer div#ViewProjectOverlayTopBar div#TopBarHideButtonOuter div#HideButtonInnerContainer:hover div#HideButtonHover {
   clip-path: polygon(0 100%, 0 0%, 100% -10%, 100% 100%);
 }
+div#ViewProjectOverlayContainer div.caption {
+  font-size: 18px;
+  font-family: "Bitter", serif;
+  font-color: #666;
+  padding-top: 0.75em;
+}
+div#ViewProjectOverlayContainer div.caption span {
+  display: inline-block;
+}
 
 .viewProjectOverlay-enter {
   clip-path: polygon(0 0, 0 0, 50% 0, 100% 0, 100% 0);
@@ -109,6 +118,28 @@ div#ViewProjectOverlayContainer div#ViewProjectOverlayTopBar div#TopBarHideButto
 
 .viewProjectOverlay-exit-active {
   clip-path: polygon(0 100%, 0 100%, 100% 100%, 100% 100%, 50% 100%);
+}
+
+.captionTransition-enter {
+  opacity: 0;
+  clip-path: polygon(0 0, 0 100%, 0 100%, 0 0);
+}
+
+.captionTransition-enter-active {
+  opacity: 1;
+  clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 0);
+  transition: opacity 0.5s, clip-path 0.5s ease-in;
+}
+
+.captionTransition-exit {
+  opacity: 1;
+  clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 0);
+}
+
+.captionTransition-exit-active {
+  opacity: 0;
+  clip-path: polygon(100% 0, 100% 100%, 100% 100%, 100% 0);
+  transition: opacity 0.5s, clip-path 0.5s ease-in;
 }
 
 /*# sourceMappingURL=ViewProjectOverlay.css.map */

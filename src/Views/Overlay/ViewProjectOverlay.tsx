@@ -1,14 +1,16 @@
-import React, {useContext} from 'react';
+import React, {useContext, useState} from 'react';
 import './ViewProjectOverlay.css';
 import './ProjectOverlayCarousel.css';
 import ViewProjectContext from "../../Context/ViewProjectContext";
-import {CSSTransition} from "react-transition-group";
+import {CSSTransition, SwitchTransition} from "react-transition-group";
 import {Carousel} from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 export default function ViewProjectOverlay() {
 
     const { shown, project } = useContext( ViewProjectContext );
+
+    const [ index, setIndex ] = useState(0);
 
     return <CSSTransition unmountOnExit in={shown}
                           timeout={500}
@@ -31,6 +33,7 @@ export default function ViewProjectOverlay() {
                 showThumbs={ false }
                 showStatus={ false }
                 showIndicators={ false }
+                onChange={ index => setIndex( index ) }
                 renderArrowNext={
                     ( clickHandler, hasNext) => <div className="buttonColumn right">
                         <div className="arrowContainer" onMouseDown={ clickHandler }>
@@ -56,6 +59,20 @@ export default function ViewProjectOverlay() {
                     )
                 }
             </Carousel>
+            <SwitchTransition>
+
+                <CSSTransition
+                    timeout={500}
+                    classNames="captionTransition"
+                    key={ index }
+                    unmountOnExit
+                >
+                    <div className="caption">
+                        { project.items[index].caption }
+                    </div>
+                </CSSTransition>
+
+            </SwitchTransition>
         </div>
 
     </CSSTransition>;
