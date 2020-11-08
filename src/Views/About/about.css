@@ -1,3 +1,124 @@
+div#AboutContainer {
+  padding: 15em 0;
+  font-family: "Montserrat", sans-serif;
+  position: relative;
+}
+div#AboutContainer div#AboutTitle {
+  text-align: center;
+  font-size: 48px;
+  font-weight: 800;
+  color: #141414;
+}
+div#AboutContainer div#AboutBody {
+  color: #141414;
+  font-size: 3em;
+  text-align: center;
+}
+div#AboutContainer div#AboutBody.visible div#AboutBodysvg svg path {
+  animation: svgAnim 5s cubic-bezier(0.6, 1.4, 0.6, -0.4) both;
+}
+div#AboutContainer div#AboutBody div#AboutBodysvg {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+div#AboutContainer div#AboutBody div#AboutBodysvg svg {
+  height: 100%;
+  width: 100%;
+  padding: 10%;
+}
+div#AboutContainer div#AboutBody p {
+  padding: 0.5em;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: opacity 1s ease, transform 1s ease-out;
+}
+div#AboutContainer div#AboutBody p.visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+div#AboutContainer div#AboutBody p span.red {
+  color: #ff0046;
+}
+div#AboutContainer div#AboutBody p span.purple {
+  color: #b506fc;
+}
 
+@keyframes svgAnim {
+  0% {
+    stroke-dasharray: 1100;
+    stroke-dashoffset: -2100;
+  }
+  100% {
+    stroke-dasharray: 2100;
+    stroke-dashoffset: 0;
+  }
+}
+div#AboutSkills {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+div#AboutSkills.visible div ul li span {
+  transform: translateX(0);
+}
+div#AboutSkills div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #141414;
+}
+div#AboutSkills div h3 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: unset;
+  font-size: 36px;
+}
+div#AboutSkills div ul {
+  list-style-type: none;
+  overflow: hidden;
+  padding: 0 3em 3em 0;
+  margin: 2em 0 0 2em;
+}
+div#AboutSkills div ul li span {
+  transform: translateX(-100%);
+  display: inline-block;
+  transition: transform 1s cubic-bezier(0.7, 0.1, 0.1, 1.7);
+  font-size: 24px;
+  font-family: "Bitter", serif;
+}
+div#AboutSkills div#FrontEnd {
+  grid-column: 1/2;
+}
+div#AboutSkills div#FrontEnd ul li {
+  color: #ff0046;
+}
+div#AboutSkills div#FrontEnd ul li:nth-child(1) span {
+  transition-delay: 0.5s;
+}
+div#AboutSkills div#FrontEnd ul li:nth-child(2) span {
+  transition-delay: 0.8s;
+}
+div#AboutSkills div#FrontEnd ul li:nth-child(3) span {
+  transition-delay: 1.1s;
+}
+div#AboutSkills div#FrontEnd ul li:nth-child(4) span {
+  transition-delay: 1.4s;
+}
+div#AboutSkills div#Design {
+  grid-column: 2/3;
+}
+div#AboutSkills div#Design ul li {
+  color: #b506fc;
+}
+div#AboutSkills div#Design ul li:nth-child(1) span {
+  transition-delay: 1.7s;
+}
+div#AboutSkills div#Design ul li:nth-child(2) span {
+  transition-delay: 2s;
+}
+div#AboutSkills div#Design ul li:nth-child(3) span {
+  transition-delay: 2.3s;
+}
 
 /*# sourceMappingURL=about.css.map */

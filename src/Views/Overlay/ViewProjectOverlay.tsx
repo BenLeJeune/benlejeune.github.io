@@ -1,4 +1,4 @@
-import React, {useContext, useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import './ViewProjectOverlay.css';
 import './ProjectOverlayCarousel.css';
 import ViewProjectContext from "../../Context/ViewProjectContext";
@@ -11,6 +11,10 @@ export default function ViewProjectOverlay() {
     const { shown, project } = useContext( ViewProjectContext );
 
     const [ index, setIndex ] = useState(0);
+
+    useEffect( () => {
+        setIndex(0);
+    }, [ shown, project ] )
 
     return <CSSTransition unmountOnExit in={shown}
                           timeout={500}

@@ -1,1 +1,97 @@
 @use '../../sass/module'
+div#AboutContainer
+  padding: 15em 0
+  font-family: module.$sans-font
+  position: relative
+  div#AboutTitle
+    text-align: center
+    font-size: 48px
+    font-weight: module.$weight-title-thick
+    color: module.$black
+  div#AboutBody
+    &.visible
+      div#AboutBodysvg svg path
+        animation: svgAnim 5s cubic-bezier(.6,1.4,.6,-0.4) both
+    div#AboutBodysvg
+      position: absolute
+      height: 100%
+      width: 100%
+      top: 0
+      left: 0
+      svg
+        height: 100%
+        width: 100%
+        padding: 10%
+    color: module.$black
+    font-size: 3em
+    text-align: center
+    p
+      padding: .5em
+      opacity: 0
+      transform: translateY(100%)
+      transition: opacity 1s ease, transform 1s ease-out
+      &.visible
+        transform: translateY(0)
+        opacity: 1
+      span
+        &.red
+          color: module.$red
+        &.purple
+          color: module.$purple
+
+@keyframes svgAnim
+  0%
+    stroke-dasharray: 1100
+    stroke-dashoffset: -2100
+  100%
+    stroke-dasharray: 2100
+    stroke-dashoffset: 0
+
+div#AboutSkills
+  display: grid
+  grid-template-columns: repeat(2, 1fr)
+  &.visible
+    div ul li span
+      transform: translateX(0)
+  div
+    display: flex
+    align-items: center
+    justify-content: center
+    color: module.$black
+    h3
+      font-family: module.$sans-font
+      font-weight: unset
+      font-size: 36px
+    ul
+      list-style-type: none
+      overflow: hidden
+      padding: 0 3em 3em 0
+      margin: 2em 0 0 2em
+      li span
+        transform: translateX(-100%)
+        display: inline-block
+        transition: transform 1s module.$slow-snappy-overshoot
+        font-size: 24px
+        font-family: module.$serif-font
+    &#FrontEnd
+      grid-column: 1/2
+      ul li
+        color: module.$red
+        &:nth-child(1) span
+          transition-delay: 0.5s
+        &:nth-child(2) span
+          transition-delay: 0.8s
+        &:nth-child(3) span
+          transition-delay: 1.1s
+        &:nth-child(4) span
+          transition-delay: 1.4s
+    &#Design
+      grid-column: 2/3
+      ul li
+        color: module.$purple
+        &:nth-child(1) span
+          transition-delay: 1.7s
+        &:nth-child(2) span
+          transition-delay: 2.0s
+        &:nth-child(3) span
+          transition-delay: 2.3s

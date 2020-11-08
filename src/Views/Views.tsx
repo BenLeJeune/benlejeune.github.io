@@ -18,8 +18,8 @@ export default function Views() {
     return <div id="ViewsWrapper">
         <div ref={ViewsContainerRef} id="ViewsContainer">
             <Landing/>
-            <PortfolioContainer/>
             <About/>
+            <PortfolioContainer/>
         </div>
     </div>
 
