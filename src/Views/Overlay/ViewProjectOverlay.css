@@ -23,7 +23,7 @@ div#ViewProjectOverlayContainer div#ViewProjectOverlayTopBar div#TopBarProjectTi
 }
 div#ViewProjectOverlayContainer div#ViewProjectOverlayTopBar div#TopBarProjectTitle h2 {
   font-family: "Montserrat", sans-serif;
-  font-size: 64px;
+  font-size: 4em;
   font-weight: 600;
   text-align: center;
   color: #141414;
@@ -95,9 +95,9 @@ div#ViewProjectOverlayContainer div#ViewProjectOverlayTopBar div#TopBarHideButto
   clip-path: polygon(0 100%, 0 0%, 100% -10%, 100% 100%);
 }
 div#ViewProjectOverlayContainer div.caption {
-  font-size: 18px;
+  font-size: 1.25em;
   font-family: "Bitter", serif;
-  font-color: #666;
+  color: #666;
   padding-top: 0.75em;
 }
 div#ViewProjectOverlayContainer div.caption span {

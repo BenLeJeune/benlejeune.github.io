@@ -56,7 +56,7 @@ div#LandingView div#LandingTransitionTitleContainer {
 div#LandingView div#LandingTransitionTitleContainer h1#LandingTransitionTitle {
   font-family: "Montserrat", sans-serif;
   color: #141414;
-  font-size: 72px;
+  font-size: 4.5em;
   transition: transform ease-out 0.3s;
 }
 div#LandingView div#LandingTitleContainer {

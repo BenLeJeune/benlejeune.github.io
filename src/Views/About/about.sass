@@ -3,11 +3,6 @@ div#AboutContainer
   padding: 15em 0
   font-family: module.$sans-font
   position: relative
-  div#AboutTitle
-    text-align: center
-    font-size: 48px
-    font-weight: module.$weight-title-thick
-    color: module.$black
   div#AboutBody
     &.visible
       div#AboutBodysvg svg path
@@ -23,7 +18,7 @@ div#AboutContainer
         width: 100%
         padding: 10%
     color: module.$black
-    font-size: 3em
+    font-size: module.$large-body
     text-align: center
     p
       padding: .5em
@@ -53,6 +48,7 @@ div#AboutSkills
   &.visible
     div ul li span
       transform: translateX(0)
+      opacity: 1
   div
     display: flex
     align-items: center
@@ -61,7 +57,7 @@ div#AboutSkills
     h3
       font-family: module.$sans-font
       font-weight: unset
-      font-size: 36px
+      font-size: module.$small-heading
     ul
       list-style-type: none
       overflow: hidden
@@ -69,9 +65,10 @@ div#AboutSkills
       margin: 2em 0 0 2em
       li span
         transform: translateX(-100%)
+        opacity: 0
         display: inline-block
-        transition: transform 1s module.$slow-snappy-overshoot
-        font-size: 24px
+        transition: transform 1s ease, opacity 0.75s ease
+        font-size: module.$small-info
         font-family: module.$serif-font
     &#FrontEnd
       grid-column: 1/2

@@ -1,0 +1,29 @@
+div#ContactContainer div#SocialContainer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-flow: column nowrap;
+}
+div#ContactContainer div#SocialContainer h2#SocialTag {
+  font-size: 4.5em;
+  font-family: "Montserrat", sans-serif;
+  color: #141414;
+}
+div#ContactContainer p#FindMe, div#ContactContainer p#Email {
+  padding: 2em 0;
+  width: 100%;
+  text-align: center;
+  color: #666;
+  font-size: 1.25em;
+  font-family: "Bitter", serif;
+}
+div#ContactContainer p#FindMe a#EmailHighlight, div#ContactContainer p#Email a#EmailHighlight {
+  color: #666;
+  cursor: pointer;
+  text-decoration: none;
+}
+div#ContactContainer p#FindMe a#EmailHighlight:hover, div#ContactContainer p#Email a#EmailHighlight:hover {
+  text-decoration: underline;
+}
+
+/*# sourceMappingURL=Contact.css.map */

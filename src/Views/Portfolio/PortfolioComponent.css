@@ -70,11 +70,16 @@ div.portfolioComponentMainContainer div.portfolioComponentTextContainer div.port
   transition: opacity 0.5s ease;
   white-space: nowrap;
 }
-div.portfolioComponentMainContainer div.portfolioComponentTextContainer div.portfolioComponentTextRow div.portfolioComponentText h2, div.portfolioComponentMainContainer div.portfolioComponentTextContainer div.portfolioComponentTextRow div.portfolioComponentText p {
+div.portfolioComponentMainContainer div.portfolioComponentTextContainer div.portfolioComponentTextRow div.portfolioComponentText h2 {
   transition: transform 0.5s ease-in-out;
+  font-size: 2.5em;
+  font-weight: 800;
 }
 div.portfolioComponentMainContainer div.portfolioComponentTextContainer div.portfolioComponentTextRow div.portfolioComponentText p {
+  transition: transform 0.5s ease-in-out;
   transition-delay: 0.05s;
+  font-size: 1.25em;
+  font-weight: 400;
 }
 div.portfolioComponentMainContainer div.portfolioComponentBackground {
   position: absolute;

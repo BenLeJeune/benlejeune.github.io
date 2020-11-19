@@ -3,6 +3,7 @@ import Landing from "./Landing/Landing";
 import About from "./About/About";
 import PortfolioContainer from "./Portfolio/PortfolioContainer";
 import useScroll from "../Hooks/useScroll";
+import Contact from "./Contact/Contact";
 
 export default function Views() {
 
@@ -20,6 +21,7 @@ export default function Views() {
             <Landing/>
             <About/>
             <PortfolioContainer/>
+            <Contact/>
         </div>
     </div>
 

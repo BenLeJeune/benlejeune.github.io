@@ -1,0 +1,25 @@
+@use '../../sass/module'
+
+div#ContactContainer
+  div#SocialContainer
+    width: 100%
+    display: flex
+    align-items: center
+    flex-flow: column nowrap
+    h2#SocialTag
+      font-size: module.$x-large-title
+      font-family: module.$sans-font
+      color: module.$black
+  p#FindMe, p#Email
+    padding: 2em 0
+    width: 100%
+    text-align: center
+    color: module.$grey
+    font-size: module.$tiny-text
+    font-family: module.$serif-font
+    a#EmailHighlight
+      color: module.$grey
+      cursor: pointer
+      text-decoration: none
+      &:hover
+        text-decoration: underline

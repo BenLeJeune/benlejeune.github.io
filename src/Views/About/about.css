@@ -3,12 +3,6 @@ div#AboutContainer {
   font-family: "Montserrat", sans-serif;
   position: relative;
 }
-div#AboutContainer div#AboutTitle {
-  text-align: center;
-  font-size: 48px;
-  font-weight: 800;
-  color: #141414;
-}
 div#AboutContainer div#AboutBody {
   color: #141414;
   font-size: 3em;
@@ -62,6 +56,7 @@ div#AboutSkills {
 }
 div#AboutSkills.visible div ul li span {
   transform: translateX(0);
+  opacity: 1;
 }
 div#AboutSkills div {
   display: flex;
@@ -72,7 +67,7 @@ div#AboutSkills div {
 div#AboutSkills div h3 {
   font-family: "Montserrat", sans-serif;
   font-weight: unset;
-  font-size: 36px;
+  font-size: 2.5em;
 }
 div#AboutSkills div ul {
   list-style-type: none;
@@ -82,9 +77,10 @@ div#AboutSkills div ul {
 }
 div#AboutSkills div ul li span {
   transform: translateX(-100%);
+  opacity: 0;
   display: inline-block;
-  transition: transform 1s cubic-bezier(0.7, 0.1, 0.1, 1.7);
-  font-size: 24px;
+  transition: transform 1s ease, opacity 0.75s ease;
+  font-size: 1.5em;
   font-family: "Bitter", serif;
 }
 div#AboutSkills div#FrontEnd {
