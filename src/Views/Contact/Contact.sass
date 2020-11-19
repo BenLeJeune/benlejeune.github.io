@@ -10,6 +10,10 @@ div#ContactContainer
       font-size: module.$x-large-title
       font-family: module.$sans-font
       color: module.$black
+      opacity: 0
+      &.visible
+        opacity: 1
+        transition: opacity 0.5s ease
   p#FindMe, p#Email
     padding: 2em 0
     width: 100%

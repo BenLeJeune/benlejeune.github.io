@@ -8,6 +8,11 @@ div#ContactContainer div#SocialContainer h2#SocialTag {
   font-size: 4.5em;
   font-family: "Montserrat", sans-serif;
   color: #141414;
+  opacity: 0;
+}
+div#ContactContainer div#SocialContainer h2#SocialTag.visible {
+  opacity: 1;
+  transition: opacity 0.5s ease;
 }
 div#ContactContainer p#FindMe, div#ContactContainer p#Email {
   padding: 2em 0;

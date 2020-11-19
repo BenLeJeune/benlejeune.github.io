@@ -9,7 +9,8 @@ export default function Sidebar() {
     const navigation : { [key:string]:string } = {
         "About Me": "AboutContainer",
         "My Skills": "AboutSkills",
-        "Portfolio": "PortfolioContainer"
+        "Portfolio": "PortfolioContainer",
+        "Follow Me": "ContactContainer"
     }
 
     const navigate = ( key: string ) => {
