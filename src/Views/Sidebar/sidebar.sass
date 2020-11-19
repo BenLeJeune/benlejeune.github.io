@@ -8,8 +8,25 @@ div#SidebarColumn
   z-index: 50
   transition: transform 0.5s ease
   transform: translateX(0vw)
-  p#SidebarToggle
+  #SidebarToggle
+    animation: Arrow-Entrance-Anim 0.5s linear backwards
+    animation-delay: 1.5s
+    animation-timing-function: module.$snappy-easing
     cursor: pointer
+    padding: .5em
+    margin: .5em
+    transition: transform 0.5s ease
+    transform: rotate(0deg)
+    &:hover
+      svg path
+        fill: module.$red
+    svg path
+      transition: fill 0.3s
+      fill: module.$black
+    &.open
+      transform: rotate(180deg)
+      svg path
+        fill: module.$purple
   div#SidebarContent
     position: absolute
     height: 100%
@@ -58,3 +75,11 @@ div#SidebarColumn
           left: 0
       &:nth-child(2)
         margin-top: 1.5em
+
+@keyframes Arrow-Entrance-Anim
+  from
+    opacity: 0
+    transform: translateX(-100%)
+  to
+    opacity: 1
+    transform: translateX(0)

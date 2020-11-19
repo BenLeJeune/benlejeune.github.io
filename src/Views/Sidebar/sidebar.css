@@ -7,8 +7,28 @@ div#SidebarColumn {
   transition: transform 0.5s ease;
   transform: translateX(0vw);
 }
-div#SidebarColumn p#SidebarToggle {
+div#SidebarColumn #SidebarToggle {
+  animation: Arrow-Entrance-Anim 0.5s linear backwards;
+  animation-delay: 1.5s;
+  animation-timing-function: cubic-bezier(0.85, 0, 0.15, 1);
   cursor: pointer;
+  padding: 0.5em;
+  margin: 0.5em;
+  transition: transform 0.5s ease;
+  transform: rotate(0deg);
+}
+div#SidebarColumn #SidebarToggle:hover svg path {
+  fill: #ff0046;
+}
+div#SidebarColumn #SidebarToggle svg path {
+  transition: fill 0.3s;
+  fill: #141414;
+}
+div#SidebarColumn #SidebarToggle.open {
+  transform: rotate(180deg);
+}
+div#SidebarColumn #SidebarToggle.open svg path {
+  fill: #b506fc;
 }
 div#SidebarColumn div#SidebarContent {
   position: absolute;
@@ -67,6 +87,17 @@ div#SidebarColumn div#SidebarContent p.navButton span::before {
 }
 div#SidebarColumn div#SidebarContent p.navButton:nth-child(2) {
   margin-top: 1.5em;
+}
+
+@keyframes Arrow-Entrance-Anim {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 /*# sourceMappingURL=sidebar.css.map */
