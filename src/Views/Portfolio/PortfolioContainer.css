@@ -1,3 +1,21 @@
+div#PortfolioContainer div#PortfolioGridContainer div.portfolioGridRows div.columns div.mobileTitle h2 {
+  font-size: 4em;
+}
+@media (max-width: 1000px) {
+  div#PortfolioContainer div#PortfolioGridContainer div.portfolioGridRows div.columns div.mobileTitle h2 {
+    font-size: 2em;
+  }
+}
+
+div#PortfolioContainer div#PortfolioGridContainer div.portfolioGridRows div.columns div.mobileTitle p {
+  font-size: 2.5em;
+}
+@media (max-width: 1000px) {
+  div#PortfolioContainer div#PortfolioGridContainer div.portfolioGridRows div.columns div.mobileTitle p {
+    font-size: 1.5em;
+  }
+}
+
 div#PortfolioContainer {
   width: 100%;
   min-height: 100vh;
@@ -24,6 +42,13 @@ div#PortfolioContainer div#PortfolioGridContainer div.portfolioGridRows {
   display: grid;
   grid-template-rows: 4fr 1fr 4fr 1fr;
 }
+@media (max-width: 1000px) {
+  div#PortfolioContainer div#PortfolioGridContainer div.portfolioGridRows {
+    display: flex;
+    flex-flow: column nowrap;
+    margin: 2em 0;
+  }
+}
 div#PortfolioContainer div#PortfolioGridContainer div.portfolioGridRows div.columns {
   cursor: pointer;
   transition: opacity 0.5s ease;
@@ -36,6 +61,45 @@ div#PortfolioContainer div#PortfolioGridContainer div.portfolioGridRows div.colu
 }
 div#PortfolioContainer div#PortfolioGridContainer div.portfolioGridRows div.columns.visible {
   opacity: 1;
+}
+@media (max-width: 1000px) {
+  div#PortfolioContainer div#PortfolioGridContainer div.portfolioGridRows div.columns {
+    padding: 2em 0;
+  }
+}
+div#PortfolioContainer div#PortfolioGridContainer div.portfolioGridRows div.columns div.mobileTitle {
+  display: none;
+}
+@media (max-width: 1000px) {
+  div#PortfolioContainer div#PortfolioGridContainer div.portfolioGridRows div.columns div.mobileTitle {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+div#PortfolioContainer div#PortfolioGridContainer div.portfolioGridRows div.columns div.mobileTitle h2 {
+  background-color: white;
+  padding: 0.3em 0.3em 0;
+}
+div#PortfolioContainer div#PortfolioGridContainer div.portfolioGridRows div.columns div.mobileTitle h2.red {
+  color: #ff0046;
+}
+div#PortfolioContainer div#PortfolioGridContainer div.portfolioGridRows div.columns div.mobileTitle h2.purple {
+  color: #b506fc;
+}
+@media (max-width: 1000px) {
+  div#PortfolioContainer div#PortfolioGridContainer div.portfolioGridRows div.columns {
+    display: flex;
+    flex-flow: column nowrap;
+  }
+  div#PortfolioContainer div#PortfolioGridContainer div.portfolioGridRows div.columns.leftProjContainer, div#PortfolioContainer div#PortfolioGridContainer div.portfolioGridRows div.columns.rightProjContainer {
+    margin: 2em 0;
+  }
 }
 div#PortfolioContainer div#PortfolioGridContainer div.portfolioGridRows div.columns.leftProjContainer {
   grid-row: 1/2;

@@ -52,6 +52,11 @@ div.portfolioComponentMainContainer div.portfolioComponentTextContainer div.port
   width: 100%;
   display: flex;
 }
+@media (max-width: 1000px) {
+  div.portfolioComponentMainContainer div.portfolioComponentTextContainer div.portfolioComponentTextRow {
+    display: none;
+  }
+}
 div.portfolioComponentMainContainer div.portfolioComponentTextContainer div.portfolioComponentTextRow.left div.portfolioComponentText h2, div.portfolioComponentMainContainer div.portfolioComponentTextContainer div.portfolioComponentTextRow.left p {
   transform: translateX(25%);
   text-align: left;
@@ -91,6 +96,13 @@ div.portfolioComponentMainContainer div.portfolioComponentBackground {
   transform: translate3d(-1em, 1em, 0);
   background-color: transparent;
   transition: background-color 0.5s ease;
+}
+@media (max-width: 1000px) {
+  div.portfolioComponentMainContainer div.portfolioComponentBackground {
+    height: 100%;
+    width: calc(100% + 2em);
+    transform: translate(-1em, 1em) !important;
+  }
 }
 div.portfolioComponentMainContainer div.portfolioComponentBackground.black {
   border-color: #141414;

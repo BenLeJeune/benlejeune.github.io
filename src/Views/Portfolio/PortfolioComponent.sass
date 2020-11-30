@@ -25,7 +25,6 @@ div.portfolioComponentMainContainer
   min-height: 400px
   @media ( min-width: 1500px )
     min-height: 30vw
-
   position: relative
   div.portfolioComponentTextContainer
     font-family: module.$sans-font
@@ -47,6 +46,8 @@ div.portfolioComponentMainContainer
     div.portfolioComponentTextRow
       width: 100%
       display: flex
+      @include module.smallScreen
+        display: none
       &.left
         div.portfolioComponentText h2, p
           transform: translateX(25%)
@@ -84,6 +85,10 @@ div.portfolioComponentMainContainer
     transform: translate3d(-1em, 1em, 0)
     background-color: transparent
     transition: background-color 0.5s ease
+    @include module.smallScreen
+      height: 100%
+      width: calc(100% + 2em)
+      transform: translate(-1em, 1em) !important
     &.black
       border-color: module.$black
     &.purple

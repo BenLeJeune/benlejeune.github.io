@@ -1,6 +1,8 @@
 @use '../../sass/module'
 div#AboutContainer
   padding: 15em 0
+  @include module.smallScreen
+    padding: 4em 0
   font-family: module.$sans-font
   position: relative
   div#AboutBody
@@ -18,7 +20,7 @@ div#AboutContainer
         width: 100%
         padding: 10%
     color: module.$black
-    font-size: module.$large-body
+    @extend %large-body
     text-align: center
     p
       padding: .5em
@@ -45,6 +47,9 @@ div#AboutContainer
 div#AboutSkills
   display: grid
   grid-template-columns: repeat(2, 1fr)
+  @include module.smallScreen
+    display: flex
+    flex-flow: column nowrap
   &.visible
     div ul li span
       transform: translateX(0)
@@ -54,6 +59,8 @@ div#AboutSkills
     align-items: center
     justify-content: center
     color: module.$black
+    @include module.smallScreen
+      flex-flow: column nowrap
     h3
       font-family: module.$sans-font
       font-weight: unset
@@ -63,8 +70,15 @@ div#AboutSkills
       overflow: hidden
       padding: 0 3em 3em 0
       margin: 2em 0 0 2em
+      @include module.smallScreen
+        padding: 0
+        margin: 1em 0 2em
       li span
         transform: translateX(-100%)
+        @include module.smallScreen
+          transform: translateX(0)
+          text-align: center
+          width: 100%
         opacity: 0
         display: inline-block
         transition: transform 1s ease, opacity 0.75s ease

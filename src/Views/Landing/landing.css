@@ -1,3 +1,12 @@
+div#LandingView div#LandingTransitionTitleContainer h1#LandingTransitionTitle {
+  font-size: 4em;
+}
+@media (max-width: 1000px) {
+  div#LandingView div#LandingTransitionTitleContainer h1#LandingTransitionTitle {
+    font-size: 4.5em;
+  }
+}
+
 div#LandingView {
   height: 100vh;
   width: 100%;
@@ -11,9 +20,20 @@ div#LandingView.anim-dormant div#LandingTitleGreeting, div#LandingView.anim-dorm
 div#LandingView.anim-dormant div#LandingTransitionRect {
   clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
 }
+@media (max-width: 1000px) {
+  div#LandingView.anim-dormant div#LandingTransitionRect {
+    clip-path: polygon(0 100%, 0 100%, 100% 100%, 100% 100%);
+  }
+}
 div#LandingView.anim-dormant div#LandingTransitionTitleContainer {
   clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
   transform: translateX(25%);
+}
+@media (max-width: 1000px) {
+  div#LandingView.anim-dormant div#LandingTransitionTitleContainer {
+    clip-path: polygon(0 100%, 0 100%, 100% 100%, 100% 100%);
+    transform: translateY(10%);
+  }
 }
 div#LandingView.anim-transition div#LandingTitleGreeting, div#LandingView.anim-transition div#LandingTitleName {
   transform: translateX(100vw);
@@ -21,9 +41,20 @@ div#LandingView.anim-transition div#LandingTitleGreeting, div#LandingView.anim-t
 div#LandingView.anim-transition div#LandingTransitionRect {
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
 }
+@media (max-width: 1000px) {
+  div#LandingView.anim-transition div#LandingTransitionRect {
+    clip-path: polygon(0 100%, 0 0, 100% 0, 100% 100%);
+  }
+}
 div#LandingView.anim-transition div#LandingTransitionTitleContainer {
   transform: translateX(0%);
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+@media (max-width: 1000px) {
+  div#LandingView.anim-transition div#LandingTransitionTitleContainer {
+    clip-path: polygon(0 100%, 0 0, 100% 0, 100% 100%);
+    transform: translateY(0%);
+  }
 }
 div#LandingView.anim-final div#LandingTitleGreeting, div#LandingView.anim-final div#LandingTitleName {
   transform: translateX(100vw);
@@ -31,9 +62,19 @@ div#LandingView.anim-final div#LandingTitleGreeting, div#LandingView.anim-final 
 div#LandingView.anim-final div#LandingTransitionRect {
   clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
 }
+@media (max-width: 1000px) {
+  div#LandingView.anim-final div#LandingTransitionRect {
+    clip-path: polygon(0 100%, 0 0, 100% 0, 100% 100%);
+  }
+}
 div#LandingView.anim-final div#LandingTransitionTitleContainer {
   transform: translateX(0%);
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+@media (max-width: 1000px) {
+  div#LandingView.anim-final div#LandingTransitionTitleContainer {
+    clip-path: polygon(0 100%, 0 0, 100% 0, 100% 100%);
+  }
 }
 div#LandingView div#LandingTransitionRect {
   width: 100%;
@@ -53,11 +94,21 @@ div#LandingView div#LandingTransitionTitleContainer {
   justify-content: center;
   transition: transform 1s cubic-bezier(1, -0.75, 0, 1.75), clip-path 1s cubic-bezier(0.85, 0, 0.15, 1);
 }
+@media (max-width: 1000px) {
+  div#LandingView div#LandingTransitionTitleContainer {
+    transition: transform 0.5s cubic-bezier(0.85, 0, 0.15, 1), clip-path 0.5s cubic-bezier(0.85, 0, 0.15, 1);
+  }
+}
 div#LandingView div#LandingTransitionTitleContainer h1#LandingTransitionTitle {
   font-family: "Montserrat", sans-serif;
   color: #141414;
-  font-size: 4.5em;
   transition: transform ease-out 0.3s;
+}
+@media (max-width: 1000px) {
+  div#LandingView div#LandingTransitionTitleContainer h1#LandingTransitionTitle {
+    width: 100%;
+    text-align: center;
+  }
 }
 div#LandingView div#LandingTitleContainer {
   height: 100vh;
@@ -71,6 +122,15 @@ div#LandingView div#LandingTitleContainer div#LandingBoldTitle {
   display: flex;
   flex-flow: column nowrap;
   align-items: flex-start;
+}
+@media (max-width: 1000px) {
+  div#LandingView div#LandingTitleContainer div#LandingBoldTitle {
+    width: 100%;
+    align-items: center;
+  }
+  div#LandingView div#LandingTitleContainer div#LandingBoldTitle svg {
+    height: 2em;
+  }
 }
 div#LandingView div#LandingTitleContainer div#LandingBoldTitle div#LandingTitleGreeting, div#LandingView div#LandingTitleContainer div#LandingBoldTitle div#LandingTitleName {
   transition: transform 1s ease;

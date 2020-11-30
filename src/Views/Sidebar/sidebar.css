@@ -7,6 +7,11 @@ div#SidebarColumn {
   transition: transform 0.5s ease;
   transform: translateX(0vw);
 }
+@media (max-width: 1000px) {
+  div#SidebarColumn {
+    background-color: transparent;
+  }
+}
 div#SidebarColumn #SidebarToggle {
   animation: Arrow-Entrance-Anim 0.5s linear backwards;
   animation-delay: 1.5s;
@@ -39,6 +44,11 @@ div#SidebarColumn div#SidebarContent {
   display: flex;
   flex-flow: column nowrap;
   padding: 3em;
+}
+@media (max-width: 1000px) {
+  div#SidebarColumn div#SidebarContent {
+    width: 50vw;
+  }
 }
 div#SidebarColumn div#SidebarContent img#SidebarLogo {
   width: 100%;

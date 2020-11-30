@@ -27,3 +27,39 @@ $large-body: 3em
 $small-heading: 2.5em
 $small-info: 1.5em
 $tiny-text: 1.25em
+
+//Mixins
+@mixin smallScreen()
+  @media( max-width: 1000px )
+    @content
+
+
+@mixin largeScreen()
+  @media( min-width: 1500px )
+    @content
+
+
+%x-large-title
+  font-size: $large-title
+  @include smallScreen
+    font-size: 4em
+%large-title
+  font-size: $large-title
+  @include smallScreen
+    font-size: 4em
+%large-body
+  font-size: $large-title
+  @include smallScreen
+    font-size: 2em
+%small-heading
+  font-size: $small-heading
+  @include smallScreen
+    font-size: 1.5em
+%small-info
+  font-size: $small-info
+  @include smallScreen
+    font-size: 1.5em
+%tiny-text
+  font-size: $tiny-text
+  @include smallScreen
+    font-size: 1.25em

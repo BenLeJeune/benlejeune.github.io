@@ -39,11 +39,19 @@ export function PortfolioRow({ leftproj, rightproj }:PortfolioRowProps) {
         <div id={`Left-Proj-${ leftproj.title }`} onMouseDown={() => setProject( leftproj ) } className={`leftProjContainer columns ${leftVisibleClass}`}>
             <div className="leftProj">
                 <PortfolioComponent proj={ leftproj }/>
+                <div className="mobileTitle">
+                    <h2 className={leftproj.color}>{ leftproj.title }</h2>
+                    <p>{ leftproj.subtitle }</p>
+                </div>
             </div>
         </div>
         <div id={`Right-Proj-${ rightproj.title }`} onMouseDown={ () => setProject( rightproj ) } className={`rightProjContainer columns ${rightVisibleClass}`}>
             <div className="rightProj">
                 <PortfolioComponent proj={ rightproj }/>
+                <div className="mobileTitle">
+                    <h2 className={rightproj.color}>{ rightproj.title }</h2>
+                    <p>{ rightproj.subtitle }</p>
+                </div>
             </div>
         </div>
     </div>

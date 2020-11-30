@@ -5,6 +5,8 @@ div#SidebarColumn
   width: 50px
   height: 100vh
   background-color: white
+  @include module.smallScreen
+    background-color: transparent
   z-index: 50
   transition: transform 0.5s ease
   transform: translateX(0vw)
@@ -31,6 +33,8 @@ div#SidebarColumn
     position: absolute
     height: 100%
     width: 20vw
+    @include module.smallScreen
+      width: 50vw
     top: 0
     right: 100%
     display: flex

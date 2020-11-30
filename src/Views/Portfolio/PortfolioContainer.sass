@@ -19,6 +19,10 @@ div#PortfolioContainer
   div#PortfolioGridContainer
     padding: 10%
     div.portfolioGridRows
+      @include module.smallScreen
+        display: flex
+        flex-flow: column nowrap
+        margin: 2em 0
       display: grid
       grid-template-rows: 4fr 1fr 4fr 1fr
       div.columns
@@ -31,6 +35,34 @@ div#PortfolioContainer
         display: grid
         grid-template-columns: 4fr 3fr 4fr
         width: 100%
+        @include module.smallScreen
+          padding: 2em 0
+        div.mobileTitle
+          @include module.smallScreen
+            display: flex
+            flex-flow: column nowrap
+            align-items: center
+            text-align: center
+            font-family: module.$sans-font
+            position: absolute
+            left: 50%
+            transform: translateX(-50%)
+          display: none
+          h2
+            @extend %large-body
+            background-color: white
+            padding: .3em .3em 0
+            &.red
+              color: module.$red
+            &.purple
+              color: module.$purple
+          p
+            @extend %small-heading
+        @include module.smallScreen
+          display: flex
+          flex-flow: column nowrap
+          &.leftProjContainer, &.rightProjContainer
+            margin: 2em 0
         &.leftProjContainer
           grid-row: 1/2
         &.rightProjContainer
