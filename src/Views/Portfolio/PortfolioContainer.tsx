@@ -41,7 +41,6 @@ export function PortfolioRow({ leftproj, rightproj }:PortfolioRowProps) {
                 <PortfolioComponent proj={ leftproj }/>
                 <div className="mobileTitle">
                     <h2 className={leftproj.color}>{ leftproj.title }</h2>
-                    <p>{ leftproj.subtitle }</p>
                 </div>
             </div>
         </div>
@@ -50,7 +49,6 @@ export function PortfolioRow({ leftproj, rightproj }:PortfolioRowProps) {
                 <PortfolioComponent proj={ rightproj }/>
                 <div className="mobileTitle">
                     <h2 className={rightproj.color}>{ rightproj.title }</h2>
-                    <p>{ rightproj.subtitle }</p>
                 </div>
             </div>
         </div>

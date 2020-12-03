@@ -16,12 +16,6 @@ const SocialMediaObj: { [id:string]: SocialMedia } = {
         link: "https://twitter.com/ben_le_jeune_",
         description: "Follow me on Twitter for random thoughts, WIP posts and announcements."
     },
-    "Medium": {
-        name: "Medium",
-        logoURL: "Medium-Symbol-Black-RGB.svg",
-        link: "https://medium.com/@ben_le_jeune_",
-        description: "Sometimes I write about what I do and the things I learn on Medium."
-    },
     "Instagram": {
         name: "Instagram",
         logoURL: "Instagram-Glyph-Logo.svg",
@@ -63,6 +57,7 @@ export default function SocialMediaLinks() {
                 }</div>
             </CSSTransition>
         </SwitchTransition>
+        <p id="Medium">Or my writings at</p>
     </div>
 }
 
@@ -70,9 +65,9 @@ type SocialButtonProps = {
     socialMedia: SocialMedia
 }
 
-function SocialButton({ socialMedia }: SocialButtonProps) {
+export function SocialButton({ socialMedia }: SocialButtonProps) {
 
-    return <a href={ socialMedia.link } className="SocialButton">
+    return <a href={ socialMedia.link } className="socialButton">
         <img alt={`${socialMedia.name} icon`} src={`/assets/platforms/${ socialMedia.logoURL }`}/>
     </a>
 

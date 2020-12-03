@@ -6,6 +6,8 @@ div#SocialMediaLinksContainer
     color: module.$grey
     width: 100%
     text-align: center
+    @include module.smallScreen
+      display: none
   div#SocialMediaLinksInnerContainer
     width: 100%
     display: flex
@@ -14,16 +16,21 @@ div#SocialMediaLinksContainer
     justify-content: space-evenly
     position: relative
     padding: 2em 20%
+    @include module.smallScreen
+      padding: 2em 0
     div
+      @include module.smallScreen
+        height: 3em
       height: 4em
       transition: transform 0.5s ease
       &:hover
         transform: translateY(-10px)
-      a.SocialButton
-        height: 4em
-        margin: 1em
-        img
-          height: 100%
+
+a.socialButton
+  height: 4em
+  margin: 1em
+  img
+    height: 100%
 
 .socialMediaDescription-enter
   transform: translateY(-100%)

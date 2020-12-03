@@ -4,6 +4,11 @@ div#SocialMediaLinksContainer div#Explanation {
   width: 100%;
   text-align: center;
 }
+@media (max-width: 1000px) {
+  div#SocialMediaLinksContainer div#Explanation {
+    display: none;
+  }
+}
 div#SocialMediaLinksContainer div#SocialMediaLinksInnerContainer {
   width: 100%;
   display: flex;
@@ -13,18 +18,29 @@ div#SocialMediaLinksContainer div#SocialMediaLinksInnerContainer {
   position: relative;
   padding: 2em 20%;
 }
+@media (max-width: 1000px) {
+  div#SocialMediaLinksContainer div#SocialMediaLinksInnerContainer {
+    padding: 2em 0;
+  }
+}
 div#SocialMediaLinksContainer div#SocialMediaLinksInnerContainer div {
   height: 4em;
   transition: transform 0.5s ease;
 }
+@media (max-width: 1000px) {
+  div#SocialMediaLinksContainer div#SocialMediaLinksInnerContainer div {
+    height: 3em;
+  }
+}
 div#SocialMediaLinksContainer div#SocialMediaLinksInnerContainer div:hover {
   transform: translateY(-10px);
 }
-div#SocialMediaLinksContainer div#SocialMediaLinksInnerContainer div a.SocialButton {
+
+a.socialButton {
   height: 4em;
   margin: 1em;
 }
-div#SocialMediaLinksContainer div#SocialMediaLinksInnerContainer div a.SocialButton img {
+a.socialButton img {
   height: 100%;
 }
 

@@ -6,17 +6,30 @@ div#ContactContainer
     display: flex
     align-items: center
     flex-flow: column nowrap
-    h2#SocialTag
-      font-size: module.$x-large-title
+    h2.socialTag
+      @extend %large-title
       font-family: module.$sans-font
       color: module.$black
-  p#FindMe, p#Email
+      @include module.smallScreen
+        font-size: 2em
+    div#MediumContainer
+      width: 100%
+      display: flex
+      flex-flow: row nowrap
+      align-items: center
+      justify-content: center
+      a.socialButton
+        transition: transform 0.5s ease
+        &:hover
+          transform: translateY(-10px)
+  p#FindMe, p#Email, p#Medium
     padding: 2em 0
     width: 100%
     text-align: center
     color: module.$grey
     font-size: module.$tiny-text
     font-family: module.$serif-font
+    font-style: italic
     a#EmailHighlight
       color: module.$grey
       cursor: pointer

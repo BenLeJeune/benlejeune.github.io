@@ -79,6 +79,7 @@ div#PortfolioContainer div#PortfolioGridContainer div.portfolioGridRows div.colu
     font-family: "Montserrat", sans-serif;
     position: absolute;
     left: 50%;
+    min-width: 70%;
     transform: translateX(-50%);
   }
 }

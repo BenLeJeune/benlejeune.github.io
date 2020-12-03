@@ -1,28 +1,55 @@
+div#ContactContainer div#SocialContainer h2.socialTag {
+  font-size: 4em;
+}
+@media (max-width: 1000px) {
+  div#ContactContainer div#SocialContainer h2.socialTag {
+    font-size: 3em;
+  }
+}
+
 div#ContactContainer div#SocialContainer {
   width: 100%;
   display: flex;
   align-items: center;
   flex-flow: column nowrap;
 }
-div#ContactContainer div#SocialContainer h2#SocialTag {
-  font-size: 4.5em;
+div#ContactContainer div#SocialContainer h2.socialTag {
   font-family: "Montserrat", sans-serif;
   color: #141414;
 }
-div#ContactContainer p#FindMe, div#ContactContainer p#Email {
+@media (max-width: 1000px) {
+  div#ContactContainer div#SocialContainer h2.socialTag {
+    font-size: 2em;
+  }
+}
+div#ContactContainer div#SocialContainer div#MediumContainer {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+}
+div#ContactContainer div#SocialContainer div#MediumContainer a.socialButton {
+  transition: transform 0.5s ease;
+}
+div#ContactContainer div#SocialContainer div#MediumContainer a.socialButton:hover {
+  transform: translateY(-10px);
+}
+div#ContactContainer p#FindMe, div#ContactContainer p#Email, div#ContactContainer p#Medium {
   padding: 2em 0;
   width: 100%;
   text-align: center;
   color: #666;
   font-size: 1.25em;
   font-family: "Bitter", serif;
+  font-style: italic;
 }
-div#ContactContainer p#FindMe a#EmailHighlight, div#ContactContainer p#Email a#EmailHighlight {
+div#ContactContainer p#FindMe a#EmailHighlight, div#ContactContainer p#Email a#EmailHighlight, div#ContactContainer p#Medium a#EmailHighlight {
   color: #666;
   cursor: pointer;
   text-decoration: none;
 }
-div#ContactContainer p#FindMe a#EmailHighlight:hover, div#ContactContainer p#Email a#EmailHighlight:hover {
+div#ContactContainer p#FindMe a#EmailHighlight:hover, div#ContactContainer p#Email a#EmailHighlight:hover, div#ContactContainer p#Medium a#EmailHighlight:hover {
   text-decoration: underline;
 }
 
