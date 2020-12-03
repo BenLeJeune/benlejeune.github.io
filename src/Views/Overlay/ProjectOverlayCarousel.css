@@ -13,9 +13,9 @@ div#ViewProjectOverlayContainer div.carousel-root div.carousel-slider div.slider
   padding: 2em;
 }
 div#ViewProjectOverlayContainer div.carousel-root div.carousel-slider div.slider-wrapper ul.slider {
-  height: 100%;
   position: absolute;
-  width: 100%;
+  width: calc(100% - 4em);
+  height: calc(100% - 4em);
   transition: transform 0.5s cubic-bezier(0.75, 0, 0.25, 1);
 }
 div#ViewProjectOverlayContainer div.carousel-root div.carousel-slider div.slider-wrapper ul.slider li.slide {

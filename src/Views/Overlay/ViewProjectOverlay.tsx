@@ -25,9 +25,7 @@ export default function ViewProjectOverlay() {
             <div id="ViewProjectOverlayTopBar">
                 <div id="TopBarProjectTitle">
                     <h2>
-                        <span>
-                            {project.title}
-                        </span>
+                        {project.title}
                     </h2>
                 </div>
                 <HideProjectButton/>

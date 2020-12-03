@@ -16,7 +16,7 @@ div#ViewProjectOverlayContainer {
 div#ViewProjectOverlayContainer div#ViewProjectOverlayTopBar {
   width: 100%;
   display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-columns: 1fr auto minmax(3em, 1fr);
 }
 div#ViewProjectOverlayContainer div#ViewProjectOverlayTopBar div#TopBarProjectTitle {
   grid-column: 2/3;
