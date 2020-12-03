@@ -6,9 +6,11 @@ div#AboutContainer
   font-family: module.$sans-font
   position: relative
   div#AboutBody
+    stroke-dasharray: 1050
+    stroke-dashoffset: 1050
     &.visible
       div#AboutBodysvg svg path
-        animation: svgAnim 5s cubic-bezier(.6,1.4,.6,-0.4) both
+        animation: svgAnim 7s cubic-bezier(.6,1.4,.6,-0.4) both
     div#AboutBodysvg
       position: absolute
       height: 100%
@@ -38,8 +40,8 @@ div#AboutContainer
 
 @keyframes svgAnim
   0%
-    stroke-dasharray: 1100
-    stroke-dashoffset: -2100
+    stroke-dasharray: 1050
+    stroke-dashoffset: 1050
   100%
     stroke-dasharray: 2100
     stroke-dashoffset: 0

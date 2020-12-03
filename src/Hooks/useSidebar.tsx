@@ -7,19 +7,21 @@ export default function useSidebar() {
     const toggleSidebar = () => setSidebarOpen( prev => !prev )
 
     useEffect(() => {
-        const ids = [
-            "SidebarColumn",
-            "ViewportMargins",
-            "ViewsWrapper"
-        ] //The ids of the elements that need to be transformed
-        for ( let index in ids ) {
-            const id = ids[index];
-            try {
-                const el = document.getElementById(id);
-                if (el) el.style.transform = `translateX(${ sidebarOpen ? '2' : '' }0vw)`
-            }
-            catch (e) { console.log(e) }
-        }
+        const el = document.getElementById("OuterWrapper");
+        if ( el ) el.className = sidebarOpen ? "sidebarShown" : "sidebarHidden";
+        // const ids = [
+        //     "SidebarColumn",
+        //     "ViewportMargins",
+        //     "ViewsWrapper"
+        // ] //The ids of the elements that need to be transformed
+        // for ( let index in ids ) {
+        //     const id = ids[index];
+        //     try {
+        //         const el = document.getElementById(id);
+        //         if (el) el.style.transform = `translateX(${ sidebarOpen ? '2' : '' }0vw)`
+        //     }
+        //     catch (e) { console.log(e) }
+        // }
     }, [ sidebarOpen ])
 
     return {
