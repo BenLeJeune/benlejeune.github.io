@@ -12,15 +12,27 @@ div#ViewProjectOverlayContainer div.carousel-root div.carousel-slider div.slider
   width: 100%;
   padding: 2em;
 }
+@media (max-width: 1000px) {
+  div#ViewProjectOverlayContainer div.carousel-root div.carousel-slider div.slider-wrapper {
+    padding: 0;
+  }
+}
 div#ViewProjectOverlayContainer div.carousel-root div.carousel-slider div.slider-wrapper ul.slider {
   position: absolute;
   width: calc(100% - 4em);
   height: calc(100% - 4em);
   transition: transform 0.5s cubic-bezier(0.75, 0, 0.25, 1);
 }
+@media (max-width: 1000px) {
+  div#ViewProjectOverlayContainer div.carousel-root div.carousel-slider div.slider-wrapper ul.slider {
+    width: 100%;
+    height: 100%;
+  }
+}
 div#ViewProjectOverlayContainer div.carousel-root div.carousel-slider div.slider-wrapper ul.slider li.slide {
   transition: opacity 0.5s ease, transform 0.5s ease;
   transform: matrix(1, 0, 0.2, 0.8, 0, 0);
+  opacity: 0;
   height: 100%;
   background-color: transparent !important;
 }
@@ -30,15 +42,59 @@ div#ViewProjectOverlayContainer div.carousel-root div.carousel-slider div.slider
 }
 div#ViewProjectOverlayContainer div.carousel-root div.carousel-slider div.slider-wrapper ul.slider li.slide.selected ~ .slide {
   transform: matrix(1, 0, -0.2, 1.2, 0, 0);
+  opacity: 0;
 }
 div#ViewProjectOverlayContainer div.carousel-root div.carousel-slider div.slider-wrapper ul.slider li.slide div.slideContainer {
   height: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
 }
 div#ViewProjectOverlayContainer div.carousel-root div.carousel-slider div.slider-wrapper ul.slider li.slide div.slideContainer img.slideImage {
   max-height: 100%;
   max-width: 100%;
   object-fit: cover;
   width: auto;
+}
+div#ViewProjectOverlayContainer div.carousel-root div.carousel-slider ul.control-dots {
+  display: none;
+}
+@media (max-width: 1000px) {
+  div#ViewProjectOverlayContainer div.carousel-root div.carousel-slider ul.control-dots {
+    display: unset;
+  }
+  div#ViewProjectOverlayContainer div.carousel-root div.carousel-slider ul.control-dots .controlDot {
+    display: inline-block;
+    height: 0.75em;
+    width: 0.75em;
+    border-radius: 0.5em;
+    margin: 0 0.5em;
+    border: 1px solid;
+    transition: opacity 0.5s ease, background-color 0.5s ease;
+    opacity: 0.75;
+  }
+  div#ViewProjectOverlayContainer div.carousel-root div.carousel-slider ul.control-dots .controlDot.selected {
+    opacity: 1;
+  }
+  div#ViewProjectOverlayContainer div.carousel-root div.carousel-slider ul.control-dots .controlDot.red {
+    border-color: #ff0046;
+  }
+  div#ViewProjectOverlayContainer div.carousel-root div.carousel-slider ul.control-dots .controlDot.red.selected {
+    background-color: #ff0046;
+  }
+  div#ViewProjectOverlayContainer div.carousel-root div.carousel-slider ul.control-dots .controlDot.black {
+    border-color: #141414;
+  }
+  div#ViewProjectOverlayContainer div.carousel-root div.carousel-slider ul.control-dots .controlDot.black.selected {
+    background-color: #141414;
+  }
+  div#ViewProjectOverlayContainer div.carousel-root div.carousel-slider ul.control-dots .controlDot.purple {
+    border-color: #b506fc;
+  }
+  div#ViewProjectOverlayContainer div.carousel-root div.carousel-slider ul.control-dots .controlDot.purple.selected {
+    background-color: #141414;
+  }
 }
 div#ViewProjectOverlayContainer div.buttonColumn {
   position: absolute;
@@ -48,6 +104,11 @@ div#ViewProjectOverlayContainer div.buttonColumn {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+@media (max-width: 1000px) {
+  div#ViewProjectOverlayContainer div.buttonColumn {
+    display: none;
+  }
 }
 div#ViewProjectOverlayContainer div.buttonColumn.right {
   right: 0;

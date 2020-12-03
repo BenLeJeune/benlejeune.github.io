@@ -34,8 +34,11 @@ export default function ViewProjectOverlay() {
                 transitionTime={ 500 }
                 showThumbs={ false }
                 showStatus={ false }
-                showIndicators={ false }
+                showIndicators={ true }
                 onChange={ index => setIndex( index ) }
+                renderIndicator={ (clickHandler, isSelected, index1, label) =>
+                    <li onClick={ clickHandler } className={`controlDot ${ isSelected ? 'selected' : '' } ${ project.color }`} />
+                }
                 renderArrowNext={
                     ( clickHandler, hasNext) => <div className="buttonColumn right">
                         <div className="arrowContainer" onMouseDown={ clickHandler }>

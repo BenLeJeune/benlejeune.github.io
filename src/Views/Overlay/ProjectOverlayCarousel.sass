@@ -14,15 +14,21 @@ div#ViewProjectOverlayContainer
         height: 100%
         width: 100%
         padding: 2em
+        @include module.smallScreen
+          padding: 0
         ul.slider
           position: absolute
           width: calc(100% - 4em)
           height: calc(100% - 4em)
           transition: transform 0.5s module.$slow-snappy-easing
+          @include module.smallScreen
+            width: 100%
+            height: 100%
           li.slide
             transition: opacity 0.5s ease, transform 0.5s ease
             //Slides BEFORE the selected slide
             transform: matrix( 1, 0, 0.2, 0.8, 0, 0 )
+            opacity: 0
             //THE SELECTED SLIDE
             &.selected
               opacity: 1
@@ -30,15 +36,47 @@ div#ViewProjectOverlayContainer
             //Slides AFTER the selected slide
             &.selected~.slide
               transform: matrix(1, 0, -0.2, 1.2, 0, 0 )
+              opacity: 0
             height: 100%
             background-color: transparent !important
             div.slideContainer
               height: 100%
+              display: flex
+              flex-flow: column nowrap
+              align-items: center
+              justify-content: center
               img.slideImage
                 max-height: 100%
                 max-width: 100%
                 object-fit: cover
                 width: auto
+      ul.control-dots
+        display: none
+        @include module.smallScreen
+          display: unset
+          .controlDot
+            display: inline-block
+            height: .75em
+            width: .75em
+            border-radius: .5em
+            margin: 0 .5em
+            border: 1px solid
+            transition: opacity 0.5s ease, background-color 0.5s ease
+            opacity: 0.75
+            &.selected
+              opacity: 1
+            &.red
+              border-color: module.$red
+              &.selected
+                background-color: module.$red
+            &.black
+              border-color: module.$black
+              &.selected
+                background-color: module.$black
+            &.purple
+              border-color: module.$purple
+              &.selected
+                background-color: module.$black
   div.buttonColumn
     position: absolute
     width: 5em
@@ -47,6 +85,8 @@ div#ViewProjectOverlayContainer
     display: flex
     align-items: center
     justify-content: center
+    @include module.smallScreen
+      display: none
     &.right
       right: 0
       img.arrow.absolute
