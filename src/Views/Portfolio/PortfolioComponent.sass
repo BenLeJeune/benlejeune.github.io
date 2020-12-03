@@ -46,20 +46,26 @@ div.portfolioComponentMainContainer
     div.portfolioComponentTextRow
       width: 100%
       display: flex
+      position: absolute
       @include module.smallScreen
         display: none
+
+      &.height-3
+        transform: translateY(-10px)
+
       &.left
+        justify-content: flex-end
         div.portfolioComponentText h2, p
           transform: translateX(25%)
           text-align: left
       &.right
+        justify-content: flex-end
         div.portfolioComponentText h2, p
           transform: translateX(-25%)
-          text-align: left
+          text-align: right
       div.portfolioComponentText
         justify-content: flex-start
         height: 100%
-        width: 100%
         display: flex
         flex-direction: column
         opacity: 0

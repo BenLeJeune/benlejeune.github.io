@@ -51,24 +51,33 @@ div.portfolioComponentMainContainer div.portfolioComponentTextContainer.red {
 div.portfolioComponentMainContainer div.portfolioComponentTextContainer div.portfolioComponentTextRow {
   width: 100%;
   display: flex;
+  position: absolute;
 }
 @media (max-width: 1000px) {
   div.portfolioComponentMainContainer div.portfolioComponentTextContainer div.portfolioComponentTextRow {
     display: none;
   }
 }
+div.portfolioComponentMainContainer div.portfolioComponentTextContainer div.portfolioComponentTextRow.height-3 {
+  transform: translateY(-10px);
+}
+div.portfolioComponentMainContainer div.portfolioComponentTextContainer div.portfolioComponentTextRow.left {
+  justify-content: flex-end;
+}
 div.portfolioComponentMainContainer div.portfolioComponentTextContainer div.portfolioComponentTextRow.left div.portfolioComponentText h2, div.portfolioComponentMainContainer div.portfolioComponentTextContainer div.portfolioComponentTextRow.left p {
   transform: translateX(25%);
   text-align: left;
 }
+div.portfolioComponentMainContainer div.portfolioComponentTextContainer div.portfolioComponentTextRow.right {
+  justify-content: flex-end;
+}
 div.portfolioComponentMainContainer div.portfolioComponentTextContainer div.portfolioComponentTextRow.right div.portfolioComponentText h2, div.portfolioComponentMainContainer div.portfolioComponentTextContainer div.portfolioComponentTextRow.right p {
   transform: translateX(-25%);
-  text-align: left;
+  text-align: right;
 }
 div.portfolioComponentMainContainer div.portfolioComponentTextContainer div.portfolioComponentTextRow div.portfolioComponentText {
   justify-content: flex-start;
   height: 100%;
-  width: 100%;
   display: flex;
   flex-direction: column;
   opacity: 0;
@@ -78,7 +87,7 @@ div.portfolioComponentMainContainer div.portfolioComponentTextContainer div.port
 div.portfolioComponentMainContainer div.portfolioComponentTextContainer div.portfolioComponentTextRow div.portfolioComponentText h2 {
   transition: transform 0.5s ease-in-out;
   font-size: 2.5em;
-  font-weight: 800;
+  font-weight: 900;
 }
 div.portfolioComponentMainContainer div.portfolioComponentTextContainer div.portfolioComponentTextRow div.portfolioComponentText p {
   transition: transform 0.5s ease-in-out;
