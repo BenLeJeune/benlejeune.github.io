@@ -9,12 +9,24 @@ export default function PortfolioContainer() {
 
     const { visibleClass:titleVisibleClass } = useInView( "PortfolioSectionTitleText", true)
 
+    const getPortfolioRows = () => Object.values( MyPortfolio ).map(
+        ( proj, index ) => {
+            //If it is an odd number, i.e the second of a pair
+            if ( index % 2 === 1 ) return <PortfolioRow leftproj={ Object.values(MyPortfolio)[index - 1] } rightproj={ proj } />
+            //If it is an even number AND is the final one
+            else if ( index === Object.values(MyPortfolio).length - 1 ) return <PortfolioRow leftproj={ proj } />
+            else return null
+        }
+    ).filter( projExists => projExists ); //Removes all 'null' elements
+
     return <div id="PortfolioContainer">
         <div id="PortfolioSectionTitle" className={ titleVisibleClass }>
             <p id="PortfolioSectionTitleText">Some of my work</p>
         </div>
         <div id="PortfolioGridContainer">
-            <PortfolioRow leftproj={ MyPortfolio["fivepines"] } rightproj={ MyPortfolio["personal"] } />
+            {
+                getPortfolioRows()
+            }
         </div>
     </div>
 
@@ -22,7 +34,7 @@ export default function PortfolioContainer() {
 
 export type PortfolioRowProps = {
     leftproj:Project,
-    rightproj:Project
+    rightproj?:Project
 }
 
 export function PortfolioRow({ leftproj, rightproj }:PortfolioRowProps) {
@@ -31,7 +43,7 @@ export function PortfolioRow({ leftproj, rightproj }:PortfolioRowProps) {
 
     const { visibleClass:leftVisibleClass } = useInView( `Left-Proj-${ leftproj.title }` );
 
-    const { visibleClass:rightVisibleClass } = useInView(`Right-Proj-${ rightproj.title }`);
+    const { visibleClass:rightVisibleClass } = useInView(rightproj ? `Right-Proj-${ rightproj.title }` : `Left-Proj-${ leftproj.title }`);
 
     const setProject = ( project:Project ) => setShownProject( true, project )
 
@@ -44,13 +56,17 @@ export function PortfolioRow({ leftproj, rightproj }:PortfolioRowProps) {
                 </div>
             </div>
         </div>
-        <div id={`Right-Proj-${ rightproj.title }`} onMouseDown={ () => setProject( rightproj ) } className={`rightProjContainer columns ${rightVisibleClass}`}>
-            <div className="rightProj">
-                <PortfolioComponent proj={ rightproj }/>
-                <div className="mobileTitle">
-                    <h2 className={rightproj.color}>{ rightproj.title }</h2>
+        {
+            rightproj ?
+            <div id={`Right-Proj-${ rightproj.title }`} onMouseDown={ () => setProject( rightproj ) } className={`rightProjContainer columns ${rightVisibleClass}`}>
+                <div className="rightProj">
+                    <PortfolioComponent proj={ rightproj }/>
+                    <div className="mobileTitle">
+                        <h2 className={rightproj.color}>{ rightproj.title }</h2>
+                    </div>
                 </div>
-            </div>
-        </div>
+            </div> : null
+        }
+
     </div>
 }

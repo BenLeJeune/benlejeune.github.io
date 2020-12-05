@@ -60,8 +60,8 @@ div#ViewProjectOverlayContainer div#ViewProjectOverlayTopBar div#TopBarHideButto
 @media (max-width: 1000px) {
   div#ViewProjectOverlayContainer div#ViewProjectOverlayTopBar div#TopBarHideButtonOuter {
     position: absolute;
-    top: 0.25em;
-    right: 0.25em;
+    top: 1em;
+    right: 1em;
     height: 3em;
     width: 3em;
     padding: 0.25em;
@@ -129,7 +129,19 @@ div#ViewProjectOverlayContainer div.caption {
   font-size: 1.25em;
   font-family: "Bitter", serif;
   color: #666;
+  font-style: italic;
   padding-top: 0.75em;
+}
+div#ViewProjectOverlayContainer div.caption a {
+  text-decoration: underline;
+  color: #666;
+  transition: color 0.5s ease;
+}
+div#ViewProjectOverlayContainer div.caption a:hover {
+  color: #ff0046;
+}
+div#ViewProjectOverlayContainer div.caption a:active, div#ViewProjectOverlayContainer div.caption a:focus {
+  color: #b506fc;
 }
 div#ViewProjectOverlayContainer div.caption span {
   display: inline-block;

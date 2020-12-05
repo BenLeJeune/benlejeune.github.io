@@ -114,6 +114,7 @@ div#AboutSkills div ul li span {
   transition: transform 1s ease, opacity 0.75s ease;
   font-size: 1.5em;
   font-family: "Bitter", serif;
+  font-style: italic;
 }
 @media (max-width: 1000px) {
   div#AboutSkills div ul li span {

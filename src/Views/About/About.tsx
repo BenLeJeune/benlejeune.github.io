@@ -26,7 +26,7 @@ export default function About() {
                 <BackgroundSVG/>
             </div>
             <p id="BodyLine1" className={line1Visible ? 'visible' : ''}>
-                I am a <span className="red">student</span> and aspiring <span className="purple">digital designer</span>.
+                I'm a <span className="red">student</span> and aspiring <span className="purple">digital designer</span>.
             </p>
             <p id="BodyLine2" className={line2Visible ? 'visible' : ''}>
                 I believe in using <span className="purple">digital experiences</span> to create a <span className="red">unique, immersive and expressive</span> identity.

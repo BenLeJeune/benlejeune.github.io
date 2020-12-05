@@ -63,6 +63,13 @@ div#ViewProjectOverlayContainer div.carousel-root div.carousel-slider ul.control
 @media (max-width: 1000px) {
   div#ViewProjectOverlayContainer div.carousel-root div.carousel-slider ul.control-dots {
     display: unset;
+    width: fit-content;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+    padding: 5px;
+    border-radius: 50px;
+    box-sizing: content-box;
   }
   div#ViewProjectOverlayContainer div.carousel-root div.carousel-slider ul.control-dots .controlDot {
     display: inline-block;

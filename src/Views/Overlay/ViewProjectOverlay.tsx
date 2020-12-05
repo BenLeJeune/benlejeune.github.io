@@ -72,8 +72,8 @@ export default function ViewProjectOverlay() {
                     key={ index }
                     unmountOnExit
                 >
-                    <div className="caption">
-                        { project.items[index].caption }
+                    <div className="caption" dangerouslySetInnerHTML={{ __html: project.items[index].caption }}>
+                        {/*{ project.items[index].caption }*/}
                     </div>
                 </CSSTransition>
 

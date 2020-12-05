@@ -42,8 +42,8 @@ div#ViewProjectOverlayContainer
       padding: 10px
       @include module.smallScreen
         position: absolute
-        top: .25em
-        right: .25em
+        top: 1em
+        right: 1em
         height: 3em
         width: 3em
         padding: .25em
@@ -97,7 +97,16 @@ div#ViewProjectOverlayContainer
     font-size: module.$tiny-text
     font-family: module.$serif-font
     color: module.$grey
+    font-style: italic
     padding-top: .75em
+    a
+      text-decoration: underline
+      color: module.$grey
+      transition: color 0.5s ease
+      &:hover
+        color: module.$red
+      &:active, &:focus
+        color: module.$purple
     span
       display: inline-block
 

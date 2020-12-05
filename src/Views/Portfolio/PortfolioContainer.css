@@ -26,6 +26,7 @@ div#PortfolioContainer div#PortfolioSectionTitle {
 }
 div#PortfolioContainer div#PortfolioSectionTitle p {
   font-family: "Bitter", serif;
+  font-style: italic;
   font-size: 1.25em;
   text-align: center;
   color: #666;
