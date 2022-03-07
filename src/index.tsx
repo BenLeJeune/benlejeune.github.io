@@ -4,11 +4,15 @@ import Viewport from './Viewport';
 import * as serviceWorker from './serviceWorker';
 import './sass/index.css'
 import ViewProjectContextWrapper from "./Context/ViewProjectContextWrapper";
+import TempRouter from "./Temp_Router";
 
 ReactDOM.render(
   <React.StrictMode>
+      {/*    <Viewport />*/}
       <ViewProjectContextWrapper>
-          <Viewport />
+      <>
+          <TempRouter/>
+      </>
       </ViewProjectContextWrapper>
   </React.StrictMode>,
   document.getElementById('root')

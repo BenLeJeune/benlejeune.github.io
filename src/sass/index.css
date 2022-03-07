@@ -3,4 +3,8 @@
   margin: 0;
 }
 
+iframe {
+  pointer-events: none;
+}
+
 /*# sourceMappingURL=index.css.map */
