@@ -5,14 +5,13 @@ import * as serviceWorker from './serviceWorker';
 import './sass/index.css'
 import ViewProjectContextWrapper from "./Context/ViewProjectContextWrapper";
 import TempRouter from "./Temp_Router";
+import TempRedirect from "./Views/Temp_Redirect/TempRedirect";
 
 ReactDOM.render(
   <React.StrictMode>
       {/*    <Viewport />*/}
       <ViewProjectContextWrapper>
-      <>
-          <TempRouter/>
-      </>
+      <TempRedirect/>
       </ViewProjectContextWrapper>
   </React.StrictMode>,
   document.getElementById('root')
