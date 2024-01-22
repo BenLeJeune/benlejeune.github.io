@@ -8,7 +8,6 @@ export default function TempRouter() {
     return <BrowserRouter>
         <Routes>
             <Route path="/" element={<TempRedirect/>}/>
-            <Route path="/old-site" element={<Viewport/>}/>
         </Routes>
     </BrowserRouter>
 
