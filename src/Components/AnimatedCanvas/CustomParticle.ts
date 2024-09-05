@@ -20,7 +20,7 @@ export class CustomParticle {
         this.hue = hue
         this.theta = Math.random() * 2 * Math.PI
 
-        this.velocity = 0.1
+        this.velocity = 0.5
         this.color_velocity = 0.5
 
         this.time = 0
@@ -54,7 +54,7 @@ export class CustomParticle {
         // Actually drawing the ball
         ctx.beginPath()
         const g = ctx.createRadialGradient(this.x, this.y, this.radius * 0.01, this.x, this.y, this.radius)
-        const from_alpha = (alpha:number) => `hsla(${this.hue}, 100%, 50%, ${alpha})`
+        const from_alpha = (alpha:number) => `hsla(${this.hue}, 60%, 60%, ${alpha})`
         g.addColorStop(0, from_alpha(1))
         g.addColorStop(1, from_alpha(0))
         ctx.fillStyle = g

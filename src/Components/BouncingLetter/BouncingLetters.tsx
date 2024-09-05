@@ -1,7 +1,8 @@
 import React, {useEffect, useState} from 'react';
 
 type BouncingLetterProps = {
-    text:string
+    text:string,
+    floats:boolean
 }
 
 const PIXEL_BLACKLETTER = 'jacquard'
@@ -45,36 +46,37 @@ export default function BouncingLetters(props: BouncingLetterProps) {
         active_timer_id = setTimeout(rotate_font, 750)
 
         const el = document.getElementById('ScrollableContainer')
-        if (el) el.addEventListener('scroll', scroll_listener)
+        if (el && props.floats) el.addEventListener('scroll', scroll_listener)
 
         return () => {
             clearTimeout(active_timer_id)
-            if (el) el.removeEventListener('scroll', scroll_listener)
+            if (el && props.floats) el.removeEventListener('scroll', scroll_listener)
 
         }
 
     })
 
     useEffect(() => {
-        props.text.split('').map(
-            (letter, i) => {
-                const el = document.getElementById(`${letter}-${i}-char`)
-                if (el) {
-                    let x_disp, y_disp = 0
-                    console.log(floating)
-                    if (floating) {
-                        x_disp = (Math.random() - 0.5) * 100
-                        y_disp = -150 -Math.random() * 50
-                        el.style.transform = `translate(${x_disp}px, ${y_disp}px)`
-                        el.style.clipPath = 'polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%)'
-                    }
-                    else {
-                        el.style.transform = ''
-                        el.style.clipPath = 'polygon(-50% -50%, 150% -50%, 150% 150%, -50% 150%)'
+        if (props.floats) {
+            props.text.split('').map(
+                (letter, i) => {
+                    const el = document.getElementById(`${letter}-${i}-char`)
+                    if (el) {
+                        let x_disp, y_disp = 0
+                        console.log(floating)
+                        if (floating) {
+                            x_disp = (Math.random() - 0.5) * 100
+                            y_disp = -150 - Math.random() * 50
+                            el.style.transform = `translate(${x_disp}px, ${y_disp}px)`
+                            el.style.clipPath = 'polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%)'
+                        } else {
+                            el.style.transform = ''
+                            el.style.clipPath = 'polygon(-50% -50%, 150% -50%, 150% 150%, -50% 150%)'
+                        }
                     }
                 }
-            }
-        )
+            )
+        }
     }, [floating])
 
     const scroll_listener = () => {
@@ -84,7 +86,7 @@ export default function BouncingLetters(props: BouncingLetterProps) {
         console.log('scrolled!')
         console.log(el.scrollTop)
 
-        if (el.scrollTop > 10) {
+        if (el.scrollTop > 0) {
             setFontRotating(false)
             setFloating(true)
         }

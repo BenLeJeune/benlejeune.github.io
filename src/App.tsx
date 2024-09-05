@@ -3,6 +3,8 @@ import './App.css';
 import {Container, Row, Col} from 'react-bootstrap'
 import Landing from "./Components/Landing/Landing";
 import Canvas from "./Components/AnimatedCanvas/Canvas";
+import AboutMe from "./Components/AboutMe/AboutMe";
+import QuickLinks from "./Components/QuickLinks/QuickLinks";
 
 function App() {
 
@@ -12,7 +14,9 @@ function App() {
                 <div id="ScrollableContainerInner">
                     <Container>
                         <Landing/>
-                        <Landing/>
+                        <QuickLinks/>
+                        <br/> <br/> <br/> <br/> <br/> <br/> <br/>
+                        <AboutMe/>
                         <Landing/>
                         <Landing/>
                         <Landing/>

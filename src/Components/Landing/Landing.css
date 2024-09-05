@@ -14,23 +14,28 @@ div.landingContainer span {
   white-space: pre;
   color: white;
   clip-path: polygon(-50% -50%, 150% -50%, 150% 150%, -50% 150%);
-  transition: 0.5s ease-in-out all;
+  transition: 0.5s ease-out all;
 }
-div.landingContainer span.playwrite {
+
+.playwrite {
   font-family: "Playwrite CU", cursive;
   font-optical-sizing: auto;
 }
-div.landingContainer span.handjet {
+
+.handjet {
   font-family: "Handjet", sans-serif;
   font-optical-sizing: auto;
 }
-div.landingContainer span.baskerville {
+
+.baskerville {
   font-family: "Baskervville SC", serif;
 }
-div.landingContainer span.rocker {
+
+.rocker {
   font-family: "New Rocker", system-ui;
 }
-div.landingContainer span.jacquard {
+
+.jacquard {
   font-family: "Jacquard 12", system-ui;
 }
 
