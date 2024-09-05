@@ -1,0 +1,37 @@
+div.landingContainer {
+  height: 100vh;
+  width: 100%;
+  max-width: 200vh;
+  border-radius: 1rem;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+}
+div.landingContainer span {
+  font-weight: 400;
+  font-style: normal;
+  white-space: pre;
+  color: white;
+  clip-path: polygon(-50% -50%, 150% -50%, 150% 150%, -50% 150%);
+  transition: 0.5s ease-in-out all;
+}
+div.landingContainer span.playwrite {
+  font-family: "Playwrite CU", cursive;
+  font-optical-sizing: auto;
+}
+div.landingContainer span.handjet {
+  font-family: "Handjet", sans-serif;
+  font-optical-sizing: auto;
+}
+div.landingContainer span.baskerville {
+  font-family: "Baskervville SC", serif;
+}
+div.landingContainer span.rocker {
+  font-family: "New Rocker", system-ui;
+}
+div.landingContainer span.jacquard {
+  font-family: "Jacquard 12", system-ui;
+}
+
+/*# sourceMappingURL=Landing.css.map */
