@@ -1,0 +1,31 @@
+div#Projects
+  li.nav-item
+    button
+      border-radius: 0
+      color: white
+      background-color: transparent
+      &:hover
+        outline: 1px solid white
+
+  img
+    outline: 5px double white
+    animation: image_entrance forwards 1s cubic-bezier(.13,.96,.2,.98)
+
+  div.image-column
+    a
+      padding: 1rem
+      outline: 0px solid white
+      transition: 0.1s ease all
+      &:hover
+        outline: 5px solid white
+        transition: none
+
+
+
+@keyframes image_entrance
+  from
+    clip-path: polygon(-10% -10%, 110% -10%, 110% -10%, -10% -10%)
+    transform: translate(5%, 100%)
+  to
+    clip-path: polygon(-10% -10%, 110% -10%, 110% 110%, -10% 110%)
+    transform: none

@@ -27,16 +27,23 @@ export default function Canvas(props: Canvas_Props) {
     const resize_listener = () => {
         if (!canvas_ref.current) return
 
+
+
         let c = canvas_ref.current
         const new_width = window.innerWidth
         const new_height = window.innerHeight
 
         c.width = new_width
         c.height = new_height
+
+        const ctx = c.getContext('2d')
+        if (ctx) {
+            ctx.globalCompositeOperation = 'saturation'
+        }
     }
 
-    return <div className="canvasContainer">
-        <canvas ref={canvas_ref}/>
+    return <div id="BgCanvasContainer" className="canvasContainer" style={{position: 'absolute'}}>
+        <canvas id="BgCanvas" ref={canvas_ref}/>
     </div>
 }
 
@@ -100,6 +107,5 @@ class AnimationEngine {
         this.particles.forEach(particle => {
             particle.animate(this.ctx as CanvasRenderingContext2D, window.innerWidth, window.innerHeight)
         })
-
     }
 }

@@ -83,9 +83,6 @@ export default function BouncingLetters(props: BouncingLetterProps) {
         const el = document.getElementById('ScrollableContainer')
         if (!el) return
 
-        console.log('scrolled!')
-        console.log(el.scrollTop)
-
         if (el.scrollTop > 0) {
             setFontRotating(false)
             setFloating(true)

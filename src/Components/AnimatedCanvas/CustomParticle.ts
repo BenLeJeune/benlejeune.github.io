@@ -3,9 +3,9 @@ const mu = 1
 type rgba_type = {r:number, g:number, b:number}
 
 export class CustomParticle {
-    private x: number
-    private y: number;
-    private radius: number;
+    x: number
+    y: number;
+    radius: number;
     private hue: number;
     private time: number;
     private next_tumble_time: number;

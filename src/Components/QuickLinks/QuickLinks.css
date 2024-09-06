@@ -1,3 +1,11 @@
-
+#QuickLinks a {
+  padding: 1rem;
+  outline: 0px solid white;
+  transition: 0.1s ease all;
+}
+#QuickLinks a:hover {
+  outline: 5px solid white;
+  transition: none;
+}
 
 /*# sourceMappingURL=QuickLinks.css.map */

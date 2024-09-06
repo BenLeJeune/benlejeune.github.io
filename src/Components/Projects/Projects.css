@@ -1,0 +1,34 @@
+div#Projects li.nav-item button {
+  border-radius: 0;
+  color: white;
+  background-color: transparent;
+}
+div#Projects li.nav-item button:hover {
+  outline: 1px solid white;
+}
+div#Projects img {
+  outline: 5px double white;
+  animation: image_entrance forwards 1s cubic-bezier(0.13, 0.96, 0.2, 0.98);
+}
+div#Projects div.image-column a {
+  padding: 1rem;
+  outline: 0px solid white;
+  transition: 0.1s ease all;
+}
+div#Projects div.image-column a:hover {
+  outline: 5px solid white;
+  transition: none;
+}
+
+@keyframes image_entrance {
+  from {
+    clip-path: polygon(-10% -10%, 110% -10%, 110% -10%, -10% -10%);
+    transform: translate(5%, 100%);
+  }
+  to {
+    clip-path: polygon(-10% -10%, 110% -10%, 110% 110%, -10% 110%);
+    transform: none;
+  }
+}
+
+/*# sourceMappingURL=Projects.css.map */
