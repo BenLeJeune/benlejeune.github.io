@@ -14,7 +14,23 @@ export default function Canvas(props: Canvas_Props) {
         resize_listener()
 
         if (canvas_ref.current) {
-            let x = new AnimationEngine(canvas_ref.current)
+            const c = canvas_ref.current
+            let x = new AnimationEngine(c)
+
+            const rand = Math.random()
+            if (0 <= rand && rand <= 0.25) {
+                c.style.backgroundColor = 'deeppink'
+            }
+            else if (0.25 < rand && rand <= 0.5) {
+                c.style.backgroundColor = 'turquoise'
+            }
+            else if (0.5 < rand && rand <= 0.75) {
+                c.style.background = 'cornflowerblue'
+            }
+            else {
+                c.style.backgroundColor = 'mediumvioletred'
+            }
+
         }
 
 

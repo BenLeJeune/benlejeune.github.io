@@ -15,10 +15,12 @@ div.landingContainer
     color: white
     clip-path: polygon(-50% -50%, 150% -50%, 150% 150%, -50% 150%)
     transition: .5s ease-out all
+    display: inline-block
 
 .playwrite
-  font-family: "Playwrite CU", cursive
-  font-optical-sizing: auto
+  //font-family: "Playwrite CU", cursive
+  //font-optical-sizing: auto
+  font-family: "Zeyada", cursive
 .handjet
   font-family: "Handjet", sans-serif
   font-optical-sizing: auto
@@ -29,4 +31,60 @@ div.landingContainer
 .jacquard
   font-family: "Jacquard 12", system-ui
 
-  
+
+.TopBar
+  position: absolute
+  top: 0
+  left: 0
+  width: 100vw
+  z-index: 10
+
+  h1
+    transition: 0.5s all ease-out
+    clip-path: polygon(-50% -50%, 150% -50%, 150% -50%, -50% -50%)
+    opacity: 0
+    cursor: pointer
+  &.shown
+    h1
+      opacity: 1
+      clip-path: polygon(-50% -50%, 150% -50%, 150% 150%, -50% 150%)
+      transition-delay: 0.5s
+
+  div.EntireNavMenu
+    position: absolute
+    top: 0px
+    right: 0px
+    svg
+      height: 32px
+      width: 32px
+      cursor: pointer
+
+div#FullScrenNav
+  opacity: 0
+  pointer-events: none
+  transition: all 0.5s ease
+  backdrop-filter: none
+
+  z-index: 100
+
+  position: absolute
+  top: 0px
+  left: 0px
+  width: 100vw
+  height: 100vh
+
+  &.shown
+    opacity: 1
+    backdrop-filter: blur(10px)
+    pointer-events: all
+
+  div > div > h1
+    transition: all 0.4s cubic-bezier(.13,.96,.2,.98)
+    cursor: pointer
+    &:hover
+      transform: scale(1.2)
+
+.floating_nav_container
+  height: 100vh
+  overflow-y: scroll
+

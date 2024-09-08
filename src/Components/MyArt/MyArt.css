@@ -1,5 +1,9 @@
-#MyArt img:hover {
-  transform: scale(1.5);
+@media (min-width: 576px) {
+  #MyArt img:hover {
+    transform: scale(1.5);
+    outline: 5px double white;
+    backdrop-filter: blur(10px);
+  }
 }
 
 /*# sourceMappingURL=MyArt.css.map */

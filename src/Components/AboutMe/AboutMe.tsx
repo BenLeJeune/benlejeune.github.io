@@ -3,6 +3,8 @@ import {Col, Row, Container} from "react-bootstrap";
 import BouncingLetters from "../BouncingLetter/BouncingLetters";
 import VisibleTable from "../VisibleTable/VisibleTable";
 import './AboutMe.css'
+import DescriptionList from "../DescriptionList/DescriptionList";
+import {scroll_callback} from "../../helpers";
 
 type AboutMe_Props = {}
 
@@ -10,7 +12,7 @@ export default function AboutMe(props: AboutMe_Props) {
     return <Container id="AboutMe">
         <Row>
             <div className="col-sm-8">
-                <h1 className="handjet">About Me</h1>
+                <h1 className="handjet" id="AboutMe">About Me</h1>
                 <p>
                     I'm a 3rd year Mathematics student at <b>Imperial College London</b>, with an interest in
                     mathematical physics, machine learning and data science.
@@ -21,7 +23,40 @@ export default function AboutMe(props: AboutMe_Props) {
                 </p>
 
                 <p>
-                    I also have experience working as a freelance and contract illustrator, and as a tutor.
+                    I also have experience working as a freelance and contract illustrator. I have also volunteered in
+                    local woodland to remove invasive flora, assisted with local events such as the Remembrance parade
+                    and bonfire night festivities, and through HSBC helped renovate a children's activity centre.
+                </p>
+
+                <p>
+                    You can <a target="_blank" rel="noopener noreferrer" href="assets/Ben Le Jeune CV Public.pdf">
+                        view my concise CV as a PDF here,
+                    </a> or look below.
+                </p>
+
+                <p className="linksRow">
+                    <b>&gt;</b> <span onClick={scroll_callback("AboutMeAcademic")}>
+                        Academic Record
+                    </span> • <span onClick={scroll_callback("AboutMeResearch")}>
+                        Research Projects
+                    </span> • <span onClick={scroll_callback("AboutMeWork")}>
+                        Work Experience
+                    </span>
+                </p>
+
+                <p>
+                    You can also find me on the following websites:
+                </p>
+
+
+                <p className="linksRow">
+                    <b>&gt;</b> <a href="https://www.linkedin.com/in/ben-le-jeune" target="_blank" rel="noopener noreferrer">
+                        LinkedIn
+                    </a> • <a  href="https://medium.com/@benlejeune" target="_blank" rel="noopener noreferrer">
+                        Medium
+                    </a> • <a  href="https://github.com/BenLeJeune" target="_blank" rel="noopener noreferrer">
+                        GitHub
+                    </a>
                 </p>
             </div>
             <div className='col-sm-4'/>
@@ -30,7 +65,7 @@ export default function AboutMe(props: AboutMe_Props) {
         <Row>
             <div className='col-sm-4'/>
             <div className="col-sm-8">
-                <h1 className="rocker">Academic Record</h1>
+                <h1 id="AboutMeAcademic" className="rocker">Academic Record</h1>
 
                 <p>
                     Awarded <b>Dean's List</b> in Year 1 (top 10%).
@@ -75,7 +110,7 @@ export default function AboutMe(props: AboutMe_Props) {
         <br/> <br/> <br/>
         <Row>
             <div className="col-sm-8">
-                <h1 className="baskerville">Research Projects</h1>
+                <h1 id="AboutMeResearch" className="baskerville">Research Projects</h1>
                 <br/>
                 <h3 className="baskerville">Year 2: Stochastic Resetting and its Applications</h3>
                 <p>
@@ -111,6 +146,72 @@ export default function AboutMe(props: AboutMe_Props) {
                 </p>
             </div>
             <div className="col-sm-4"/>
+        </Row>
+        <br/> <br/> <br/>
+        <h1 id="AboutMeWork" className="handjet text-center display-4">-=• Work Experience •=-</h1>
+        <Row className="pt-5">
+            <br/>
+            <div className="col-sm-4"/>
+            <div className="col-sm-8">
+                <h3 className="handjet">Digital Innovation Intern • HSBC UK • June - August 2024</h3>
+                <p className="lead">
+                    Identified over $320K of savings opportunities, built dashboards and automated CI pipelines.
+                </p>
+                <p>
+                    Worked on a cloud engineering team for 10 weeks. Wrote python scripts to analyse our cloud
+                    real estate, built Jenkins pipelines to run these scripts automatically, and built a Looker
+                    dashboard to display the data in a digestible format.•
+                </p>
+                <p>
+                    Also wrote a script to automate VM rightsizing suggestions, a process that was previously
+                    being performed manually, then integrating this into a pipeline and dashboard to easily
+                    explore the data. I identified over $320K of annual savings opportunities, of which over $60K
+                    were implemented before I finished the internship.
+                </p>
+
+                <p>
+                    Had an opportunity to visit the Canary Wharf office to network with the Fraud Analytics
+                    Data Science team, including a talk about machine learning by a professor from Birmingham university.
+                </p>
+
+                <DescriptionList title="Tools" pairs={[
+                    ['Python', "Writing scripts to analyse HSBC's cloud estate."],
+                    ['Jenkins', "Building automated, adaptable pipelines."],
+                    ['Google Cloud Platform', 'Managing resources and using client libraries.'],
+                    ['Looker Studio', 'Making dashboards to present cloud estate data.']
+                ]}/>
+
+                <DescriptionList title="Skills" pairs={[
+                    ['Data Presentation', 'Presenting cloud estate data in a digestible format.'],
+                    ['Teamwork', 'Working with a team based around the UK, in India and Hong Kong.']
+                ]}/>
+            </div>
+        </Row>
+        <Row className="pt-5">
+            <div className="col-sm-8">
+                <h3 className="handjet">Contract Illustrator • April 2022 - January 2023 • Windmill Slam Games</h3>
+                <p>
+                    After years of hobbyist digital art, was approached to illustrate for an indie game by
+                    former lead software engineer of Wizards of the Coast.
+                </p>
+                <p>
+                    Produced many illustrations involving several rounds of feedback, creative input, developing an
+                    art style and anticipating client needs.
+                </p>
+                <p>
+                    Throne of Bone is currently available on Steam. Artwork also featured in Steam Strategy Fest and
+                    Seattle Indies Expo.
+                </p>
+
+                <DescriptionList title="Skills" pairs={[
+                    ['Communication', 'Maintaining communication through UK-Seattle time difference.'],
+                    ['Feedback', 'Responding to several rounds of feedback.'],
+                    ['Anticipating needs', 'Developing a style from previous feedback and finished pieces.'],
+                    ['Creativity & Proactivity', 'Filling gaps in artistic briefs with interest and depth.']
+                ]}/>
+            </div>
+            <div className="col-sm-4/"/>
+
         </Row>
     </Container>
 }

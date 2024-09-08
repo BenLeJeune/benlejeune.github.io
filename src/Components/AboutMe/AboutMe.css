@@ -6,4 +6,13 @@ dl.anim_in_table.shown {
   opacity: 1;
 }
 
+div#AboutMe a {
+  color: white;
+}
+div#AboutMe p.linksRow span, div#AboutMe p.linksRow a {
+  text-decoration: underline;
+  font-weight: bold;
+  cursor: pointer;
+}
+
 /*# sourceMappingURL=AboutMe.css.map */

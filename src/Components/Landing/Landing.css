@@ -15,11 +15,11 @@ div.landingContainer span {
   color: white;
   clip-path: polygon(-50% -50%, 150% -50%, 150% 150%, -50% 150%);
   transition: 0.5s ease-out all;
+  display: inline-block;
 }
 
 .playwrite {
-  font-family: "Playwrite CU", cursive;
-  font-optical-sizing: auto;
+  font-family: "Zeyada", cursive;
 }
 
 .handjet {
@@ -37,6 +37,65 @@ div.landingContainer span {
 
 .jacquard {
   font-family: "Jacquard 12", system-ui;
+}
+
+.TopBar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 10;
+}
+.TopBar h1 {
+  transition: 0.5s all ease-out;
+  clip-path: polygon(-50% -50%, 150% -50%, 150% -50%, -50% -50%);
+  opacity: 0;
+  cursor: pointer;
+}
+.TopBar.shown h1 {
+  opacity: 1;
+  clip-path: polygon(-50% -50%, 150% -50%, 150% 150%, -50% 150%);
+  transition-delay: 0.5s;
+}
+.TopBar div.EntireNavMenu {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+.TopBar div.EntireNavMenu svg {
+  height: 32px;
+  width: 32px;
+  cursor: pointer;
+}
+
+div#FullScrenNav {
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.5s ease;
+  backdrop-filter: none;
+  z-index: 100;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  height: 100vh;
+}
+div#FullScrenNav.shown {
+  opacity: 1;
+  backdrop-filter: blur(10px);
+  pointer-events: all;
+}
+div#FullScrenNav div > div > h1 {
+  transition: all 0.4s cubic-bezier(0.13, 0.96, 0.2, 0.98);
+  cursor: pointer;
+}
+div#FullScrenNav div > div > h1:hover {
+  transform: scale(1.2);
+}
+
+.floating_nav_container {
+  height: 100vh;
+  overflow-y: scroll;
 }
 
 /*# sourceMappingURL=Landing.css.map */

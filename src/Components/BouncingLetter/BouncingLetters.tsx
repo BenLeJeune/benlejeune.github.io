@@ -93,11 +93,11 @@ export default function BouncingLetters(props: BouncingLetterProps) {
         }
     }
 
-    return <>
+    return <div id="Landing">
         {
             props.text.split('').map(
                 (letter, i) => <span key={i} id={`${letter}-${i}-char`} className={currentFont}>{letter}</span>
             )
         }
-    </>
+    </div>
 }

@@ -4,7 +4,7 @@ import './Projects.css'
 
 type Projects_Props = {}
 
-const PROJECTS = ['EnGen', '...and more?']
+const PROJECTS = ['EnGen', 'Hackathons', '...and more?']
 
 export default function Projects(props: Projects_Props) {
 
@@ -12,6 +12,7 @@ export default function Projects(props: Projects_Props) {
 
     const get_tab_content = () => {
         if (currentProj === 'EnGen') return <EngenProject/>
+        else if (currentProj === 'Hackathons') return <IBMZDay2024/>
         else if (currentProj === '...and more?') return <p>More to follow (probably)...</p>
     }
 
@@ -71,3 +72,76 @@ function EngenProject() {
         </Container>
     </>
 }
+
+function IBMZDay2024() {
+    return <>
+        <Container>
+            <Row>
+                <Col sm className="d-none d-sm-block">
+                    <HackIBM/>
+                    <HackTerminal/>
+                </Col>
+                <Col sm className="d-none d-sm-block">
+                    <HackLol/>
+                </Col>
+            </Row>
+            <Row className="d-sm-none">
+                <HackIBM/>
+                <HackLol/>
+                <HackTerminal/>
+            </Row>
+        </Container>
+    </>
+}
+
+const HackIBM = () => <>
+    <small className="date">Autumn 2023</small>
+    <h1 className="handjet">IBM Z Datathon 2023</h1>
+    <p className="lead">
+        An AI-powered guide to being an ethical consumer.
+    </p>
+    <p>
+        Worked in a team to produce an LLM-powered guide to being an ethical consumer.
+        Combined web-scraping, sentiment analysis and summarisation models to provide users with
+        a comprehensive guide to a company or product's ethics before they use it.
+    </p>
+    <p>
+        Worked mostly on the react front-end.
+    </p>
+</>
+
+const HackTerminal = () => <>
+    <small className="date">Summer 2023</small>
+    <h1 className="handjet">Citadel Terminal Invitational 2023</h1>
+    <p className="lead">
+        Writing algorithms to play a turn-based strategy game.
+    </p>
+    <p>
+        Worked in a team to produce an algorithm to compete in Citadel's Terminal Summer Invitational
+        2023. Terminal is a programming game in which algorithms compete against one another in a
+        tower-defence style turn based game.
+    </p>
+    <p>
+        Wrote an algorithm in python to compete in the tournament.
+    </p>
+</>
+
+const HackLol = () => <>
+    <small className="date">Autumn 2023</small>
+    <h1 className="handjet">Global Power Rankings 2023</h1>
+    <p className="lead">
+        Using ML and traditional algorithms to rank esports teams.
+    </p>
+    <p>
+        Used previously unavailable esports match data to evaluate the performances of various teams
+        in LoL Esports and build a power ranking.
+    </p>
+    <p>
+        Extracted features from match data, and combined ML performance scores with traditional
+        sports performance algorithms such as ELO to evaluate a team's performance.
+    </p>
+    <p>
+        Challenges include a lack of inter-regional play and variety in the number of games played
+        per team.
+    </p>
+</>
