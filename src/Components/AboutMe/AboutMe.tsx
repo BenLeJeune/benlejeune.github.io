@@ -14,11 +14,14 @@ export default function AboutMe(props: AboutMe_Props) {
             <div className="col-sm-8">
                 <h1 className="handjet" id="AboutMe">About Me</h1>
                 <p>
-                    I'm a 3rd year Mathematics student at <b>Imperial College London</b>, with an interest in
+                    I'm an incoming 4th year Mathematics student at <b>Imperial College London</b>, with an interest in
                     mathematical physics, machine learning and data science.
                 </p>
                 <p>
-                    I have experience working for HSBC as a software intern, where I identified over <b>$320K</b> of
+                    I'm currently interning as a quantitative researcher at <b>Optiver</b> in Amsterdam.
+                </p>
+                <p>
+                    I have experience working for <b>HSBC UK</b> as a software intern, where I identified over <b>$320K</b> of
                     annual saving opportunities.
                 </p>
 
@@ -68,9 +71,27 @@ export default function AboutMe(props: AboutMe_Props) {
                 <h1 id="AboutMeAcademic" className="rocker">Academic Record</h1>
 
                 <p>
-                    Awarded <b>Dean's List</b> in Year 1 (top 10%).
+                    Awarded <b>Dean's List</b> in Year 1 and Year 2 (top 10%).
                 </p>
 
+                <p>Awarded the <b>Winton Prize</b> for Outstanding Undergraduate Second Year Group Project in Mathematics.</p>
+
+
+                <dl className="row">
+                    <dt className="col-sm-3">Year 3 (84.05)</dt>
+                    <dd className="col-sm-9">
+                        <VisibleTable records={[
+                            ['Quantum Mechanics I', 99.00],
+                            ['Applied Statistical Inference', 85.27],
+                            ['Methods for Data Science', 85.00],
+                            ['Time Series Analysis', 84.25],
+                            ['Stochastic Simulation', 83.97],
+                            ['Quantum Mechanics II', 82.96],
+                            ['Introduction to Statistical Learning', 76.51],
+                            ['Statistical Mechanics', 75.40]
+                        ]}/>
+                    </dd>
+                </dl>
 
                 <dl className="row">
                     <dt className="col-sm-3">Year 2 (82.96)</dt>

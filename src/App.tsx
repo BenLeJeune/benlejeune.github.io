@@ -88,8 +88,7 @@ function App() {
                         <Projects/>
                         <br/><br/><br/><br/><br/><br/><br/>
                         <MyArt/>
-                        <Landing/>
-                        <Landing/>
+                        <br/><br/><br/><br/><br/><br/><br/>
                     </Container>
                 </div>
             </div>
