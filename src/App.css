@@ -17,3 +17,11 @@ div#ScrollableContainer {
   height: 100vh;
   overflow-y: scroll;
 }
+
+div#MagicPointer {
+  height: 100px;
+  width: 100px;
+  pointer-events: none;
+  border: 1px solid white;
+  transform: translate(-50%, -50%)
+}

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useRef} from 'react';
 import {Col, Row, Container} from "react-bootstrap";
 import BouncingLetters from "../BouncingLetter/BouncingLetters";
 import VisibleTable from "../VisibleTable/VisibleTable";
@@ -9,7 +9,32 @@ import {scroll_callback} from "../../helpers";
 type AboutMe_Props = {}
 
 export default function AboutMe(props: AboutMe_Props) {
+
+    
+
+    const onPointerMove = (ev:MouseEvent) => {
+        console.log(ev.clientX, ev.clientY)
+        if (pointerRef.current) {
+            pointerRef.current.style.left = ev.clientX.toString() + "px"
+            pointerRef.current.style.top = ev.clientY.toString() + "px"
+        }
+        else {
+            console.log("No ref!")
+        }
+    }
+
+    // Funky pointer setup
+    useEffect(() => {
+        window.addEventListener("mousemove", onPointerMove)
+        return () => window.removeEventListener("mousemove", onPointerMove)
+    }, [])
+
+    const pointerRef = useRef<HTMLDivElement>(null)
+
     return <Container id="AboutMe">
+
+        <div ref={pointerRef} id="MagicPointer" className="fixed-top d-inline"/>
+
         <Row>
             <div className="col-sm-8">
                 <h1 className="handjet" id="AboutMe">About Me</h1>
@@ -171,6 +196,19 @@ export default function AboutMe(props: AboutMe_Props) {
         <br/> <br/> <br/>
         <h1 id="AboutMeWork" className="handjet text-center display-4">-=• Work Experience •=-</h1>
         <Row className="pt-5">
+            <br />
+            <div className="col-sm-8">
+                <h3 className="handjet">Quantitative Researcher Intern • Optiver • July - August 2024</h3>
+                <p className="lead">
+                    Currently in progress...
+                </p>
+                <p>
+                    Currently working as a Quantitative Researcher in Optiver's Amsterdam office.
+
+                </p>
+            </div>
+        </Row>
+        <Row className="pt-5">
             <br/>
             <div className="col-sm-4"/>
             <div className="col-sm-8">
@@ -181,7 +219,7 @@ export default function AboutMe(props: AboutMe_Props) {
                 <p>
                     Worked on a cloud engineering team for 10 weeks. Wrote python scripts to analyse our cloud
                     real estate, built Jenkins pipelines to run these scripts automatically, and built a Looker
-                    dashboard to display the data in a digestible format.•
+                    dashboard to display the data in a digestible format.
                 </p>
                 <p>
                     Also wrote a script to automate VM rightsizing suggestions, a process that was previously
